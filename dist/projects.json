@@ -1,0 +1,1361 @@
+[
+  {
+    "id": "gy-race",
+    "name": "Gy-RACE",
+    "category": "game",
+    "tech": [
+      "Unity",
+      "C#",
+      "Blender"
+    ],
+    "summary": "Gy-RACE est un jeu de course arcade de monoroues, dans l’esprit de Mario Kart, réalisé à quatre en troisième année. Le projet comprend des adversaires contrôlés par l’ordinateur (bots), avec un travail sur leur comportement et leur difficulté.",
+    "archive": "Gy-RACE-main.zip",
+    "index": 3,
+    "models": [
+      "gyrace-monowheel",
+      "gyrace-build-looping50unitwide",
+      "gyrace-build-monaco",
+      "gyrace-build-spikes",
+      "gyrace-build-shield",
+      "gyrace-build-bomb",
+      "gyrace-build-ricardo",
+      "gyrace-build-spa",
+      "gyrace-build-mans",
+      "gyrace-build-itembox",
+      "gyrace-build-implosion",
+      "gyrace-build-mondza"
+    ],
+    "note": "Projet annuel de troisième année réalisé à quatre. Ma contribution comprend la modélisation des circuits, les menus et le projectile à clous. Cinq circuits et les objets de gameplay sont récupérés dans la version Windows fournie. Les modèles sont présentés avec un matériau neutre. La vidéo du projet sera ajoutée prochainement.",
+    "files": [
+      "README.md",
+      "circuitSPA.blend",
+      "circuitLEMAN.blend",
+      "circuitMONACO.blend",
+      "circuitRICARDO.blend",
+      "Gy-RACE.exe — version Windows",
+      "Cinq circuits et objets extraits du jeu",
+      "Éléments graphiques des menus et icônes",
+      "Clous — rendu du projectile créé par Ruth"
+    ],
+    "demo": null,
+    "status": "Projet annuel (PA) · 3e année",
+    "featured": true,
+    "circuitModels": [
+      "gyrace-build-monaco",
+      "gyrace-build-ricardo",
+      "gyrace-build-spa",
+      "gyrace-build-mans",
+      "gyrace-build-mondza"
+    ],
+    "defaultModel": "gyrace-build-spa",
+    "context": "PA · 3e année · équipe de 4 personnes",
+    "studyYear": 3,
+    "annualProject": true,
+    "teamSize": 4,
+    "modelLabels": {
+      "gyrace-build-monaco": "Version du jeu · Monaco",
+      "gyrace-build-ricardo": "Version du jeu · Ricardo Tormo",
+      "gyrace-build-spa": "Version du jeu · Spa-Francorchamps",
+      "gyrace-build-mans": "Version du jeu · Le Mans",
+      "gyrace-build-mondza": "Version du jeu · Mondza — nom du fichier",
+      "gyrace-build-spikes": "Version du jeu · Pics",
+      "gyrace-build-shield": "Version du jeu · Bouclier",
+      "gyrace-build-bomb": "Version du jeu · Bombe",
+      "gyrace-build-itembox": "Version du jeu · Boîte à objets",
+      "gyrace-build-implosion": "Version du jeu · Implosion",
+      "gyrace-build-looping50unitwide": "Version du jeu · Looping"
+    },
+    "modelDescriptions": {
+      "gyrace-build-looping50unitwide": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-monaco": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-spikes": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-shield": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-bomb": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-ricardo": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-spa": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-mans": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-itembox": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-implosion": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation.",
+      "gyrace-build-mondza": "Géométrie récupérée dans la version Windows de Gy-RACE · matériau neutre de présentation."
+    },
+    "gallery": [
+      {
+        "src": "assets/graphics/gyrace/clous-ruth.png",
+        "label": "Clous — projectile de Gy-RACE",
+        "alt": "Rendu de plusieurs clous métalliques modélisés par Ruth pour un projectile de Gy-RACE.",
+        "caption": "Modélisation des clous par Ruth Suliman — l’un des projectiles créés pour Gy-RACE, projet annuel de troisième année."
+      },
+      {
+        "src": "assets/graphics/gyrace/background.png",
+        "label": "Fond du menu",
+        "alt": "Gy-RACE : fond du menu",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/btn_play.png",
+        "label": "Bouton Jouer",
+        "alt": "Gy-RACE : bouton jouer",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/btn_option.png",
+        "label": "Bouton Options",
+        "alt": "Gy-RACE : bouton options",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/btn_shop.png",
+        "label": "Bouton Personnalisation",
+        "alt": "Gy-RACE : bouton personnalisation",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/btn_quit.png",
+        "label": "Bouton Quitter",
+        "alt": "Gy-RACE : bouton quitter",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/new_bouttons_tt.png",
+        "label": "Contre-la-montre",
+        "alt": "Gy-RACE : contre-la-montre",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/scoreboardV2.png",
+        "label": "Tableau des scores",
+        "alt": "Gy-RACE : tableau des scores",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/icone_Bomb.png",
+        "label": "Icône Bombe",
+        "alt": "Gy-RACE : icône bombe",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/icone_Shield.png",
+        "label": "Icône Bouclier",
+        "alt": "Gy-RACE : icône bouclier",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      },
+      {
+        "src": "assets/graphics/gyrace/icone_Spike.png",
+        "label": "Icône Pics",
+        "alt": "Gy-RACE : icône pics",
+        "caption": "Élément graphique original extrait de Gy-RACE · présenté isolément, sans reconstitution de l’écran complet."
+      }
+    ],
+    "videoPending": true
+  },
+  {
+    "id": "minigolfvr",
+    "name": "MiniGolf VR",
+    "category": "game",
+    "tech": [
+      "Unity",
+      "C#",
+      "XR Interaction Toolkit"
+    ],
+    "summary": "Mini-golf en réalité virtuelle réalisé en fin de troisième année : pistes, balle manipulable et trois clubs. Le joueur change de club en le prenant dans le support situé derrière lui.",
+    "archive": "MiniGolfVR-main.zip",
+    "index": 7,
+    "models": [
+      "golfvr-circuit_tournant",
+      "golfvr-piste-4",
+      "golfvr-piste1",
+      "golfvr-piste2",
+      "golfvr-piste3",
+      "golfvr-terrainminigolf",
+      "golfvr-driver",
+      "golfvr-iron",
+      "golfvr-putter",
+      "golfvr-scene-ball"
+    ],
+    "note": "Six fichiers de pistes et trois clubs sont présentés. Le joueur prend et range ses clubs derrière lui grâce au support et aux emplacements de rangement XR. La balle référencée provient de la bibliothèque du cours. La vidéo du projet sera ajoutée prochainement.",
+    "files": [
+      "Scenes/MiniGolf.unity",
+      "circuitGolf — six fichiers FBX",
+      "MiniGolf/Prefabs — driver, iron, putter",
+      "Tennis_Ball_Green.prefab — ressource utilisée"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 3e année",
+    "featured": true,
+    "defaultModel": "golfvr-piste3",
+    "modelLabels": {
+      "golfvr-circuit_tournant": "Piste tournante",
+      "golfvr-piste-4": "Piste 4",
+      "golfvr-piste1": "Piste 1",
+      "golfvr-piste2": "Piste 2",
+      "golfvr-piste3": "Piste 3",
+      "golfvr-terrainminigolf": "Terrain MiniGolf",
+      "golfvr-driver": "Club driver",
+      "golfvr-iron": "Club fer",
+      "golfvr-putter": "Club putter",
+      "golfvr-scene-ball": "Balle de la scène — asset de bibliothèque"
+    },
+    "modelDescriptions": {
+      "golfvr-circuit_tournant": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-piste-4": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-piste1": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-piste2": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-piste3": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-terrainminigolf": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-driver": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-iron": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-putter": "Modèle FBX fourni · géométrie conservée, matériau neutre de présentation.",
+      "golfvr-scene-ball": "Le projet Unity référence Tennis_Ball_Green, un asset de la bibliothèque du cours. Ce modèle est présenté comme ressource utilisée, sans attribution de création personnelle."
+    },
+    "context": "Fin de 3e année · mini-golf en réalité virtuelle",
+    "studyYear": 3,
+    "videoPending": true
+  },
+  {
+    "id": "metavers-langue-des-signes",
+    "name": "Métavers — langue des signes",
+    "category": "game",
+    "context": "PA · 4e année · équipe de 2 personnes",
+    "studyYear": 4,
+    "summary": "Projet annuel réalisé à deux en quatrième année : un jeu multijoueur en métavers qui permet de communiquer en traduisant les lettres de l’alphabet signé en texte, entre une personne en VR et une autre devant une caméra.",
+    "notesCaption": "Alphabet signé → texte · communication entre VR et caméra",
+    "note": "La première personne utilise un casque VR avec détection des gestes pour signer les lettres de l’alphabet. La seconde utilise directement une caméra, sans casque VR. La reconnaissance de l’alphabet signé et sa transcription en texte permettent la communication entre les deux participants. Cette fiche décrit le projet ; les visuels et le gameplay restent à ajouter.",
+    "archive": "Présentation du projet transmise par Ruth",
+    "sourceLabel": "CONTEXTE DU PROJET",
+    "tech": [
+      "Réalité virtuelle",
+      "Multijoueur",
+      "Détection de gestes",
+      "Alphabet signé"
+    ],
+    "models": [],
+    "files": [],
+    "demo": null,
+    "status": "Projet annuel (PA) · 4e année",
+    "featured": false,
+    "index": 31,
+    "annualProject": true,
+    "teamSize": 2,
+    "gallery": [
+      {
+        "src": "assets/illustrations/metavers-langue-des-signes.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Métavers — langue des signes",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ],
+    "videoPending": true
+  },
+  {
+    "id": "projetannuel-5a",
+    "name": "Phobies — horreur & rythme cardiaque",
+    "category": "game",
+    "tech": [
+      "Unity",
+      "C#",
+      "Excite-O-Meter",
+      "Bluetooth Low Energy"
+    ],
+    "summary": "Jeu d’horreur réalisé à quatre en cinquième année, autour des phobies. Une ceinture abdominale mesure la fréquence cardiaque du joueur : ses réactions face aux différentes situations de peur servent à orienter l’expérience.",
+    "archive": "ProjetAnnuel_5A-main.zip",
+    "index": 10,
+    "models": [],
+    "note": "Le principe est de confronter le joueur à plusieurs situations liées aux phobies et d’observer les variations de sa fréquence cardiaque, afin de repérer ce qui le fait réagir et d’adapter les éléments de peur du jeu. Ce projet annuel utilise Unity, Excite-O-Meter et Bluetooth LE pour la collecte des mesures et la sauvegarde des résultats. Aucun gameplay vidéo n’est encore présenté dans cette fiche.",
+    "files": [
+      "Assets/Scripts/API/PhobiaDetectionAPI.cs"
+    ],
+    "demo": null,
+    "status": "Projet annuel (PA) · fin d’études",
+    "featured": false,
+    "context": "PA · 5e année · équipe de 4 personnes",
+    "studyYear": 5,
+    "annualProject": true,
+    "teamSize": 4,
+    "notesCaption": "Jeu d’horreur · phobies · ceinture de mesure du rythme cardiaque",
+    "videoPending": true
+  },
+  {
+    "id": "proceduralhouse",
+    "name": "Procedural House",
+    "category": "3d",
+    "tech": [
+      "Unity",
+      "C#"
+    ],
+    "summary": "Génération procédurale de pièces, murs, portes, couloirs et étages. Le projet contient aussi un générateur de labyrinthe.",
+    "archive": "ProceduralHouse-main.zip",
+    "index": 9,
+    "models": [
+      "procedural-prefab"
+    ],
+    "note": "Les scripts génèrent pièces, murs, portes, couloirs et étages. Le modèle 3D présenté est un élément de construction de l’archive. La maison interactive est une illustration du principe.",
+    "files": [
+      "ProceduralHouse/Assets/script/ProceduralHouse.cs"
+    ],
+    "demo": "house",
+    "status": "Projet étudiant · 5e année",
+    "featured": true,
+    "studyYear": 5,
+    "context": "5e année · Unity / C#"
+  },
+  {
+    "id": "projetmathbones",
+    "name": "Math Bones — armature automatique",
+    "category": "3d",
+    "tech": [
+      "Unity",
+      "C#"
+    ],
+    "summary": "À partir d’un personnage 3D, le programme construit automatiquement des segments pour former une armature : des sphères matérialisent les articulations et des bâtons relient les différentes parties du corps.",
+    "archive": "ProjetMathBones-test.zip",
+    "index": 14,
+    "models": [
+      "bones-human",
+      "bones-dragonfly",
+      "bones-bunny",
+      "bones-teddy"
+    ],
+    "note": "Projet de cinquième année. Le visuel est reconstruit à partir du personnage découpé et du calcul des extrémités et du rapprochement des articulations présents dans AutoBonesSetup.cs. Il illustre les segments générés ; ce n’est pas une capture d’exécution Unity.",
+    "files": [
+      "Assets/Scripts/AutoBonesSetup.cs",
+      "Assets/Scripts/MeshSegmentation.cs",
+      "Assets/Scripts/BoneGenerator.cs",
+      "Assets/Prefabs/HumanLowPoly_Couper.fbx"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 5e année",
+    "featured": true,
+    "studyYear": 5,
+    "context": "5e année · Unity / C#",
+    "gallery": [
+      {
+        "src": "assets/graphics/math-bones-armature.png",
+        "label": "Du personnage aux segments de l’armature",
+        "alt": "Personnage 3D à gauche ; segments bordeaux et articulations sphériques à droite.",
+        "caption": "Visualisation reconstruite à partir du modèle et de l’algorithme du projet · sphères et segments · pas une capture Unity."
+      }
+    ]
+  },
+  {
+    "id": "projetdl",
+    "name": "Apprentissage par renforcement en Rust",
+    "category": "ai",
+    "tech": [
+      "Rust",
+      "Cargo"
+    ],
+    "summary": "Bibliothèque d’apprentissage par renforcement : Q-learning, SARSA, Monte-Carlo, itération de politique et de valeur, avec environnements Grid World, Line World, Monty Hall et pierre-feuille-ciseaux.",
+    "archive": "ProjetDL-main.zip",
+    "index": 13,
+    "models": [],
+    "note": "Q-learning, SARSA, Monte-Carlo, itération de politique et de valeur. Environnements Grid World, Line World, Monty Hall et pierre-feuille-ciseaux présents dans les sources.",
+    "files": [
+      "algorithms/src/q_learning.rs"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 5e année",
+    "featured": true,
+    "studyYear": 5,
+    "context": "5e année · Rust / Cargo",
+    "gallery": [
+      {
+        "src": "assets/illustrations/projetdl.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Apprentissage par renforcement en Rust",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "algogenetique",
+    "name": "Algorithme génétique",
+    "category": "simulation",
+    "tech": [
+      "Unity",
+      "C#"
+    ],
+    "summary": "Visualisation d’une population sur un terrain : sélection, croisement, mutation et renouvellement des générations.",
+    "archive": "AlgoGenetique-main.zip",
+    "index": 0,
+    "models": [
+      "genetic-human"
+    ],
+    "note": "Projet collectif autour de la sélection, du croisement et de la mutation. Les sources attribuent à Ruth l’évaluation et la suppression des individus les plus faibles.",
+    "files": [
+      "Assets/AlgoGénétique.cs"
+    ],
+    "demo": null,
+    "status": "Projet exploratoire",
+    "featured": false
+  },
+  {
+    "id": "bioproject",
+    "name": "Biodiversité — écosystème simulé",
+    "category": "simulation",
+    "tech": [
+      "Unity",
+      "C#",
+      "Simulation 3D",
+      "Hérédité"
+    ],
+    "summary": "Simulation d’un écosystème : les biches se nourrissent d’herbe et les lions chassent les biches. Lors de leur reproduction, les biches transmettent à leurs petits des gènes issus des deux parents, qui influencent leurs chances de survie.",
+    "archive": "BioProject-main.zip · modèles et capture fournis",
+    "index": 1,
+    "models": [
+      "biodiversite-lion",
+      "biodiversite-biche"
+    ],
+    "modelLabels": {
+      "biodiversite-lion": "Lion",
+      "biodiversite-biche": "Biche"
+    },
+    "modelDescriptions": {
+      "biodiversite-lion": "Modèle original fourni en FBX, converti pour la consultation 3D.",
+      "biodiversite-biche": "Modèle original fourni en FBX, converti pour la consultation 3D."
+    },
+    "defaultModel": "biodiversite-biche",
+    "note": "La simulation associe chaîne alimentaire, reproduction des biches et héritage génétique des deux parents. La capture montre l’environnement et les populations du projet. Les modèles du lion et de la biche sont consultables séparément ; la simulation originale n’est pas exécutée dans le navigateur.",
+    "files": [
+      "LION.fbx",
+      "BICHE2.fbx",
+      "Capture de la simulation",
+      "Assets/Scripts/LSystem.cs"
+    ],
+    "demo": null,
+    "status": "Projet de simulation",
+    "context": "Chaîne alimentaire · reproduction · transmission des gènes",
+    "featured": false,
+    "gallery": [
+      {
+        "src": "assets/graphics/biodiversite-simulation.png",
+        "label": "Vue de la simulation",
+        "alt": "Simulation de biodiversité avec lions et biches sur un terrain arboré et accidenté.",
+        "caption": "Capture du projet Biodiversité fournie par Ruth."
+      }
+    ]
+  },
+  {
+    "id": "deeplearningrust",
+    "name": "DeepLearningRust",
+    "category": "ai",
+    "tech": [
+      "Rust",
+      "Cargo"
+    ],
+    "summary": "Structure initiale d’un projet Rust avec une bibliothèque et un exécutable.",
+    "archive": "DeepLearningRust-main.zip",
+    "index": 2,
+    "models": [],
+    "note": "Structure préparatoire Rust : bibliothèque, exécutable et test de base. Cette archive ne contient pas encore de modèle de deep learning.",
+    "files": [
+      "LibRS/src/lib.rs"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 5e année",
+    "featured": false,
+    "studyYear": 5,
+    "context": "5e année · Rust / Cargo",
+    "gallery": [
+      {
+        "src": "assets/illustrations/deeplearningrust.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant DeepLearningRust",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "machine-learning",
+    "name": "Classification de véhicules",
+    "category": "ai",
+    "tech": [
+      "Python",
+      "NumPy",
+      "Pillow",
+      "Matplotlib"
+    ],
+    "summary": "Modèle linéaire Python avec préparation d’images et classification de voitures, motos et vélos.",
+    "archive": "Machine-Learning-main.zip",
+    "index": 4,
+    "models": [],
+    "note": "Projet présenté à partir des sources de l’archive. Les résultats et performances ne sont pas mesurés dans ce portfolio.",
+    "files": [
+      "Src/Main.py"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 4e année",
+    "featured": false,
+    "studyYear": 4,
+    "context": "4e année · Python / NumPy",
+    "gallery": [
+      {
+        "src": "assets/illustrations/machine-learning.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Classification de véhicules",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "mathsopengl",
+    "name": "Maths OpenGL",
+    "category": "simulation",
+    "tech": [
+      "C++",
+      "OpenGL",
+      "GLFW",
+      "ImGui",
+      "GLM"
+    ],
+    "summary": "Outil graphique de géométrie 2D avec dessin de figures, transformations et calculs de découpage et d’intersections de polygones.",
+    "archive": "MathsOpenGl-main.zip",
+    "index": 6,
+    "models": [],
+    "note": "Projet présenté à partir des sources de l’archive. Les résultats et performances ne sont pas mesurés dans ce portfolio.",
+    "files": [
+      "Projet/src/Math.cpp"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 4e année",
+    "featured": false,
+    "studyYear": 4,
+    "context": "4e année · C++ / OpenGL",
+    "gallery": [
+      {
+        "src": "assets/illustrations/mathsopengl.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Maths OpenGL",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "moteurdejeuopengl",
+    "name": "Moteur de jeu OpenGL",
+    "category": "simulation",
+    "tech": [
+      "C++",
+      "OpenGL"
+    ],
+    "summary": "Prototype de moteur avec entités, composants, systèmes de mouvement et rendu, gestion des scènes et pool de threads.",
+    "archive": "MoteurDeJeuOpengl-main.zip",
+    "index": 8,
+    "models": [],
+    "note": "Projet présenté à partir des sources de l’archive. Les résultats et performances ne sont pas mesurés dans ce portfolio.",
+    "files": [
+      "mainloop.cpp"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 5e année",
+    "featured": false,
+    "studyYear": 5,
+    "context": "5e année · C++ / OpenGL",
+    "gallery": [
+      {
+        "src": "assets/illustrations/moteurdejeuopengl.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Moteur de jeu OpenGL",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "projetcpp",
+    "name": "Classe Image en C++",
+    "category": "simulation",
+    "tech": [
+      "C++",
+      "Visual Studio"
+    ],
+    "summary": "Exercice de programmation autour d’une classe d’image matricielle couleur et de ses opérateurs de manipulation de pixels.",
+    "archive": "ProjetCpp-main.zip",
+    "index": 11,
+    "models": [],
+    "note": "Projet présenté à partir des sources de l’archive. Les résultats et performances ne sont pas mesurés dans ce portfolio.",
+    "files": [
+      "README.md"
+    ],
+    "demo": null,
+    "status": "Projet exploratoire",
+    "featured": false,
+    "gallery": [
+      {
+        "src": "assets/illustrations/projetcpp.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Classe Image en C++",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "projetcpp-",
+    "name": "Traitement d’images C++",
+    "category": "simulation",
+    "tech": [
+      "C++",
+      "CMake"
+    ],
+    "summary": "Classe de traitement d’images avec exemples de transformations et fichiers de sortie : luminosité, inversion de couleurs, rotations et retournements.",
+    "archive": "ProjetCpp_-main.zip",
+    "index": 12,
+    "models": [],
+    "note": "Projet présenté à partir des sources de l’archive. Les résultats et performances ne sont pas mesurés dans ce portfolio.",
+    "files": [
+      "ProjetCpp_/Classe_Image/Source/Image.cpp"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 4e année",
+    "featured": false,
+    "studyYear": 4,
+    "context": "4e année · C++ / CMake",
+    "gallery": [
+      {
+        "src": "assets/illustrations/projetcpp-.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Traitement d’images C++",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "projetml",
+    "name": "Machine Learning C++ / Python",
+    "category": "ai",
+    "tech": [
+      "C++",
+      "Python",
+      "NumPy",
+      "OpenCV"
+    ],
+    "summary": "Bibliothèque de modèles linéaires, perceptron multicouche et réseaux RBF, appelée depuis Python pour la classification d’images.",
+    "archive": "ProjetML-main.zip",
+    "index": 15,
+    "models": [],
+    "note": "Projet présenté à partir des sources de l’archive. Les résultats et performances ne sont pas mesurés dans ce portfolio.",
+    "files": [
+      "MachineLearningDll/MachineLearningDll/LinearModel.cpp"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 4e année",
+    "featured": false,
+    "gallery": [
+      {
+        "src": "assets/illustrations/projetml.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Machine Learning C++ / Python",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ],
+    "studyYear": 4,
+    "context": "4e année · C++ / Python"
+  },
+  {
+    "id": "projet-ar-2-multi",
+    "name": "Projet AR 2 Multi",
+    "category": "game",
+    "tech": [
+      "Unity",
+      "C#"
+    ],
+    "summary": "Archive Unity préparatoire contenant une scène SampleScene.",
+    "archive": "Projet_AR_2_multi-main.zip",
+    "index": 16,
+    "models": [],
+    "note": "Structure préparatoire Unity avec une SampleScene. L’archive ne contient pas encore de logique personnalisée de réalité augmentée ou de multijoueur.",
+    "files": [
+      "Projet_AR_2Multi/Assets/Scenes/SampleScene.unity"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 4e année",
+    "featured": false,
+    "studyYear": 4,
+    "context": "4e année · Unity / C#",
+    "gallery": [
+      {
+        "src": "assets/illustrations/projet-ar-2-multi.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Projet AR 2 Multi",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ],
+    "videoPending": true
+  },
+  {
+    "id": "projet-fnaf-unreal",
+    "name": "Projet FNAF Unreal",
+    "category": "game",
+    "tech": [
+      "Unreal Engine",
+      "Blueprints"
+    ],
+    "summary": "Prototype Unreal en vue à la première personne avec Blueprints d’interaction, d’armes et de projectiles.",
+    "archive": "Projet_FNAF_unreal-main.zip",
+    "index": 17,
+    "models": [],
+    "note": "Blueprints d’interaction, d’armes et de projectiles. Les mécaniques spécifiques d’horreur ne sont pas documentées dans cette archive. Démonstration originale à ajouter.",
+    "files": [
+      "FPS_FNAF_V3/Content/BluePrints/FirstPerson/Blueprints/BPI_interaction.uasset"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 4e année",
+    "featured": false,
+    "gallery": [
+      {
+        "src": "assets/illustrations/projet-fnaf-unreal.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Projet FNAF Unreal",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ],
+    "videoPending": true,
+    "studyYear": 4,
+    "context": "4e année · Unreal Engine / Blueprints"
+  },
+  {
+    "id": "projet-math-2",
+    "name": "Géométrie algorithmique",
+    "category": "simulation",
+    "tech": [
+      "Unity",
+      "C#"
+    ],
+    "summary": "Visualisation interactive d’enveloppes convexes, triangulations incrémentale et de Delaunay, et diagramme de Voronoï.",
+    "archive": "Projet_Math_2-main.zip",
+    "index": 18,
+    "models": [],
+    "note": "Projet présenté à partir des sources de l’archive. Les résultats et performances ne sont pas mesurés dans ce portfolio.",
+    "files": [
+      "README.txt"
+    ],
+    "demo": null,
+    "status": "Projet exploratoire",
+    "featured": false,
+    "gallery": [
+      {
+        "src": "assets/illustrations/projet-math-2.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Géométrie algorithmique",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "projet-unreal-ruth",
+    "name": "FPS ESGI",
+    "category": "game",
+    "tech": [
+      "Unreal Engine",
+      "Blueprints"
+    ],
+    "summary": "Projet Unreal de FPS avec interaction, armes et différents projectiles, et cartes FirstPerson.",
+    "archive": "Projet_Unreal_Ruth-main.zip",
+    "index": 19,
+    "models": [],
+    "note": "Projet FPS_ESGI : interactions, armes et projectiles. Certains contenus sont également présents dans Projet FNAF Unreal. Démonstration originale à ajouter.",
+    "files": [
+      "FPS_ESGI.uproject"
+    ],
+    "demo": null,
+    "status": "Projet exploratoire",
+    "featured": false,
+    "gallery": [
+      {
+        "src": "assets/illustrations/projet-unreal-ruth.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant FPS ESGI",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ],
+    "videoPending": true
+  },
+  {
+    "id": "rustadc",
+    "name": "Défis algorithmiques en Rust",
+    "category": "simulation",
+    "tech": [
+      "Rust",
+      "Cargo"
+    ],
+    "summary": "Collection de dix modules de défis algorithmiques, avec sélection du jour en ligne de commande.",
+    "archive": "RustADC-main.zip",
+    "index": 20,
+    "models": [],
+    "note": "Projet présenté à partir des sources de l’archive. Les résultats et performances ne sont pas mesurés dans ce portfolio.",
+    "files": [
+      "CodesRust/src/main.rs"
+    ],
+    "demo": null,
+    "status": "Projet étudiant · 5e année",
+    "featured": false,
+    "studyYear": 5,
+    "context": "5e année · Rust / Cargo",
+    "gallery": [
+      {
+        "src": "assets/illustrations/rustadc.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Défis algorithmiques en Rust",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "siggraph",
+    "name": "Adaptive Gaming",
+    "category": "simulation",
+    "tech": [
+      "Unity",
+      "C#",
+      ".NET"
+    ],
+    "summary": "Prototype d’expérience adaptative avec détection d’araignées dans le champ de vision et simulation d’un rythme cardiaque.",
+    "archive": "Siggraph-main.zip",
+    "index": 21,
+    "models": [],
+    "note": "Prototype de jeu adaptatif avec variation simulée du rythme cardiaque. Le nom de l’archive est Siggraph ; aucune publication scientifique n’est revendiquée.",
+    "files": [
+      "AdaptiveGamingV1/Assets/script/BPMManager.cs"
+    ],
+    "demo": null,
+    "status": "Projet exploratoire",
+    "featured": false,
+    "gallery": [
+      {
+        "src": "assets/illustrations/siggraph.svg",
+        "label": "Présentation du principe",
+        "alt": "Schéma illustrant Adaptive Gaming",
+        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+      }
+    ]
+  },
+  {
+    "id": "meimoun-cavendish-logo",
+    "name": "MEIMOUN CAVENDISH",
+    "tech": [
+      "Identité visuelle",
+      "Logo",
+      "Déclinaisons"
+    ],
+    "summary": "Création du logo MEIMOUN CAVENDISH : une proposition illustrée autour des métiers de l’entreprise et une déclinaison en monogramme MC.",
+    "archive": "MEIMOUN CAVENDISH.zip",
+    "note": "Mon rôle : création du logo pendant mon expérience chez MEIMOUN CAVENDISH. La galerie présente les deux propositions et une planche retraçant l’évolution depuis l’ancien logo.",
+    "files": [
+      "1.png — évolution du logo",
+      "3.png — monogramme MC",
+      "2.png — logo illustré"
+    ],
+    "status": "Création professionnelle",
+    "context": "Identité visuelle · expérience professionnelle",
+    "gallery": [
+      {
+        "src": "assets/graphics/meimoun-evolution.png",
+        "label": "Évolution du logo",
+        "alt": "Planche présentant l’ancien logo MEIMOUN CAVENDISH et les étapes de son évolution vers le monogramme puis le portrait illustré.",
+        "caption": "Planche de recherche · de l’ancien logo aux propositions réalisées par Ruth."
+      },
+      {
+        "src": "assets/graphics/meimoun-monogramme.png",
+        "label": "Monogramme MC",
+        "alt": "Monogramme MC jaune et bleu avec outils intégrés et nom MEIMOUN CAVENDISH.",
+        "caption": "Déclinaison en monogramme · création de Ruth."
+      },
+      {
+        "src": "assets/graphics/meimoun-logo.png",
+        "label": "Logo illustré",
+        "alt": "Logo MEIMOUN CAVENDISH avec portrait au centre d’un cercle bleu et noms des métiers.",
+        "caption": "Proposition illustrée · création de Ruth."
+      }
+    ],
+    "category": "design",
+    "models": [],
+    "demo": null,
+    "index": 23
+  },
+  {
+    "id": "carte-voeux-2025",
+    "name": "Carte de vœux 2025",
+    "tech": [
+      "Mise en page",
+      "Création 2D",
+      "Carte imprimée"
+    ],
+    "summary": "Une carte de vœux pour TECNIC’LAB, avec une composition blanche, bleue et argentée, une couverture festive et un message à l’intérieur.",
+    "archive": "CarteVoeux2025.zip",
+    "note": "Projet réalisé à titre personnel, en dehors de mon travail. Les aperçus montrent la couverture et le message dans leur sens de lecture ; les planches complètes sont également disponibles.",
+    "files": [
+      "1.png — planche extérieure",
+      "2.png — planche intérieure"
+    ],
+    "status": "Projet personnel",
+    "context": "Création personnelle · hors emploi",
+    "gallery": [
+      {
+        "src": "assets/graphics/voeux-2025-couverture.png",
+        "label": "Couverture",
+        "alt": "Couverture TECNIC’LAB, Happy New years 2025, avec des motifs festifs bleus et argentés.",
+        "caption": "Couverture de la carte · aperçu dans le sens de lecture."
+      },
+      {
+        "src": "assets/graphics/voeux-2025-message.png",
+        "label": "Message intérieur",
+        "alt": "Message intérieur : l’équipe TECNIC’LAB vous souhaite des bonnes fêtes de fin d’année.",
+        "caption": "Intérieur de la carte · aperçu dans le sens de lecture."
+      },
+      {
+        "src": "assets/graphics/voeux-2025-planche-exterieure.png",
+        "label": "Planche extérieure",
+        "alt": "Planche extérieure complète de la carte, avant pliage.",
+        "caption": "Planche d’origine avant pliage · certains éléments sont volontairement inversés."
+      },
+      {
+        "src": "assets/graphics/voeux-2025-planche-interieure.png",
+        "label": "Planche intérieure",
+        "alt": "Planche intérieure complète de la carte, avant pliage.",
+        "caption": "Planche d’origine avant pliage · certains éléments sont volontairement inversés."
+      }
+    ],
+    "category": "design",
+    "models": [],
+    "demo": null,
+    "index": 24
+  },
+  {
+    "id": "ar-competences-2d",
+    "name": "AR Compétences — 2D",
+    "tech": [
+      "Communication visuelle",
+      "Création 2D",
+      "Réseaux sociaux"
+    ],
+    "summary": "Supports graphiques réalisés chez AR Compétences : « Ton avis compte ! » et contributions aux publications sur les avis clients, les vœux 2025 et la formation en réparation de smartphones.",
+    "archive": "Visuels AR Compétences",
+    "note": "« Ton avis compte ! » est une création réalisée chez AR Compétences. Les trois autres visuels présentent des créations auxquelles j’ai contribué dans le cadre d’un travail d’équipe.",
+    "files": [
+      "Thank.png — visuel original",
+      "Bonne année 2025 — visuel fourni",
+      "Réparation de smartphones — visuel fourni",
+      "Lâche ton avis ! — visuel fourni"
+    ],
+    "status": "Création professionnelle",
+    "context": "Communication 2D · expérience professionnelle",
+    "gallery": [
+      {
+        "src": "assets/graphics/ar-competences-avis.png",
+        "label": "Ton avis compte !",
+        "alt": "Affiche bleue AR Compétences « Ton avis compte ! », avec un personnage, un téléphone et un QR code pour les avis Google.",
+        "caption": "Exemple de création 2D réalisée par Ruth chez AR Compétences."
+      },
+      {
+        "src": "assets/graphics/ar-competences-voeux-2025-final.png",
+        "label": "Bonne année 2025",
+        "alt": "Visuel AR Compétences : vœux 2025 sur fond bleu nuit, avec des décorations dorées et du matériel électronique.",
+        "caption": "Contribution à la création de cette publication chez AR Compétences · visuel fourni par Ruth."
+      },
+      {
+        "src": "assets/graphics/ar-competences-lache-ton-avis-final.png",
+        "label": "Lâche ton avis !",
+        "alt": "Visuel AR Compétences « Lâche ton avis ! », typographie blanche et rose sur fond bleu.",
+        "caption": "Contribution à la création de cette publication chez AR Compétences · visuel fourni par Ruth."
+      },
+      {
+        "src": "assets/graphics/ar-competences-reparation-smartphone-final.png",
+        "label": "Réparation de smartphones",
+        "alt": "Visuel AR Compétences présentant une formation en réparation de smartphones, avec une personne travaillant au microscope.",
+        "caption": "Contribution à la création de cette publication chez AR Compétences · visuel fourni par Ruth."
+      }
+    ],
+    "category": "design",
+    "models": [],
+    "demo": null,
+    "index": 25
+  },
+  {
+    "id": "ar-competences-telephone",
+    "name": "Téléphone — Vue éclatée",
+    "category": "3d",
+    "tech": [
+      "Blender",
+      "Modélisation 3D",
+      "Animation 3D"
+    ],
+    "summary": "Un téléphone en rotation, puis une vue éclatée qui sépare l’écran, les composants internes et la coque pour révéler leur assemblage.",
+    "archive": "Animation AR Compétences",
+    "index": 26,
+    "models": [],
+    "demo": null,
+    "status": "Création professionnelle",
+    "context": "AR Compétences · création 3D professionnelle",
+    "note": "Vue éclatée réalisée avec Blender dans le cadre de mon travail chez AR Compétences. La vidéo présente l’animation du téléphone et de ses composants.",
+    "files": [
+      "WhatsApp Video 2026-10-16 at 11.20.45.mp4 — animation fournie"
+    ],
+    "video": {
+      "src": "assets/videos/ar-competences-telephone.mp4",
+      "poster": "assets/previews/ar-competences-telephone.jpg",
+      "posterAlt": "Rendu 3D sur fond noir : écran, composants et coque du téléphone séparés en vue éclatée.",
+      "title": "Téléphone — Vue éclatée, AR Compétences",
+      "caption": "Animation 3D réalisée avec Blender chez AR Compétences · 6,6 s · sans son."
+    }
+  },
+  {
+    "category": "3d",
+    "models": [],
+    "demo": null,
+    "id": "i-universe-film",
+    "name": "I-Universe — Film 3D",
+    "tech": [
+      "Blender",
+      "Unity",
+      "CapCut"
+    ],
+    "summary": "Un film 3D réalisé en équipe de trois, entre avion à hélice, moto dans le désert et monoplace dans un parking. Le trailer complet présente les scènes et leur générique.",
+    "archive": "Trailer final I-Universe",
+    "index": 27,
+    "status": "Projet étudiant · 3e année",
+    "context": "3e année · Projet de cours · équipe de 3 personnes",
+    "note": "Ma contribution : la monoplace, le décor du parking et le montage sous CapCut. Nolan Almosini : moto et désert. Léo Lagersie : avion, piste de décollage et scène Unity. Les autres crédits figurent dans le générique.",
+    "files": [
+      "trailer_I-Universe.mov — master final 4K",
+      "WhatsApp Video 2026-10-16 at 11.26.20.mp4 — même film, version réduite"
+    ],
+    "video": {
+      "src": "assets/videos/i-universe-final.mp4",
+      "poster": "assets/previews/i-universe-final.jpg",
+      "posterAlt": "Avion jaune à hélice sur sa piste, extrait du film collectif I-Universe.",
+      "title": "I-Universe — trailer final",
+      "caption": "Film complet · 1 min 03 s · son et générique conservés · version web 1080p."
+    },
+    "studyYear": 3
+  },
+  {
+    "category": "3d",
+    "models": [],
+    "demo": null,
+    "id": "monoplace-f1",
+    "name": "Monoplace F1",
+    "tech": [
+      "Blender",
+      "Modélisation 3D",
+      "Animation 3D"
+    ],
+    "summary": "Une monoplace rouge mise en scène dans un parking. Cet extrait présente ma séquence 3D intégrée au film collectif I-Universe.",
+    "archive": "MyF10001-0602.mp4",
+    "index": 28,
+    "status": "Projet étudiant · 3e année",
+    "context": "3e année · I-Universe · ma contribution au film",
+    "note": "Réalisation de la monoplace et du décor « parking », créditée à Ruth Suliman dans le générique du film I-Universe. Extrait original de 10 secondes.",
+    "files": [
+      "MyF10001-0602.mp4 — extrait personnel",
+      "Film complet et crédits dans la fiche I-Universe"
+    ],
+    "video": {
+      "src": "assets/videos/monoplace-f1.mp4",
+      "poster": "assets/previews/monoplace-f1.jpg",
+      "posterAlt": "Monoplace rouge dans un parking sombre, modélisation 3D de Ruth Suliman.",
+      "title": "Monoplace F1 — séquence de Ruth Suliman",
+      "caption": "Séquence 3D personnelle du film I-Universe · 10 s · sans son."
+    },
+    "studyYear": 3
+  },
+  {
+    "id": "tp-blender-animation",
+    "name": "TP Blender — Animation",
+    "category": "3d",
+    "tech": [
+      "Blender",
+      "Animation",
+      "Armature"
+    ],
+    "summary": "Trois travaux pratiques de cours : feux de départ F1, rebond et déformation d’une balle, puis animation d’un personnage articulé en marche.",
+    "archive": "TP4 · TP5 · TP6 — fichiers Blender",
+    "index": 29,
+    "models": [
+      "tp4-feux-depart-f1",
+      "tp5-balle-rebondissante",
+      "tp6-cycle-marche"
+    ],
+    "defaultModel": "tp5-balle-rebondissante",
+    "modelLabels": {
+      "tp4-feux-depart-f1": "TP4 · Feux de départ F1",
+      "tp5-balle-rebondissante": "TP5 · Balle rebondissante",
+      "tp6-cycle-marche": "TP6 · Cycle de marche"
+    },
+    "modelDescriptions": {
+      "tp4-feux-depart-f1": "Feux de départ F1 · modèle statique du TP · glissez pour tourner, pincez pour zoomer.",
+      "tp5-balle-rebondissante": "Balle rebondissante · déplacement et déformation animés du TP · lecture et pause ci-dessous.",
+      "tp6-cycle-marche": "Animation d’un personnage articulé · couleurs du fichier conservées, textures externes non fournies."
+    },
+    "modelBounds": {
+      "tp4-feux-depart-f1": {
+        "min": [
+          -1.7662339210510254,
+          0.0,
+          -2.0
+        ],
+        "max": [
+          1.7662339210510254,
+          1.5955567359924316,
+          2.0
+        ]
+      },
+      "tp6-cycle-marche": {
+        "min": [
+          -0.17911939322948456,
+          -0.00026919227093458176,
+          -2.0000014305114746
+        ],
+        "max": [
+          0.17899927496910095,
+          0.9106289744377136,
+          1.9999990463256836
+        ]
+      },
+      "tp5-balle-rebondissante": {
+        "min": [
+          -0.08728484809398651,
+          0.0,
+          -2.0
+        ],
+        "max": [
+          0.08728490769863129,
+          0.936516284942627,
+          2.0
+        ]
+      }
+    },
+    "demo": null,
+    "status": "Projet étudiant · 3e année",
+    "context": "3e année · modélisation & animation",
+    "note": "Les animations de la balle et du personnage sont issues des fichiers Blender. Le TP de marche utilise une base de personnage préexistante ; ses textures externes manquantes sont remplacées par les couleurs enregistrées dans le fichier.",
+    "files": [
+      "TP4feuF1_Ruth_Suliman.blend",
+      "TP6_humain_Marche_Ruth_Suliman.blend",
+      "TP5balle_Ruth_Suliman.blend"
+    ],
+    "studyYear": 3
+  },
+  {
+    "id": "modelisations-blender-cours",
+    "name": "Explorations 3D — Blender",
+    "category": "3d",
+    "tech": [
+      "Blender",
+      "Modélisation",
+      "Voxels",
+      "Formes géométriques"
+    ],
+    "summary": "Huit créations réalisées en cours : arbres, personnage et planète en voxels, Rubik’s Cube, cube de couleurs et compositions fractales.",
+    "archive": "Projets Blender · 2e semestre",
+    "index": 30,
+    "models": [
+      "cours-arbre",
+      "cours-cerisier",
+      "cours-personnage-voxel",
+      "cours-planete-voxel",
+      "cours-rubiks-cube",
+      "cours-cube-couleurs",
+      "cours-fractale",
+      "cours-spirale"
+    ],
+    "modelLabels": {
+      "cours-arbre": "Arbre en voxels",
+      "cours-cerisier": "Cerisier en voxels",
+      "cours-personnage-voxel": "Personnage en voxels",
+      "cours-planete-voxel": "Planète en voxels",
+      "cours-rubiks-cube": "Rubik’s Cube",
+      "cours-cube-couleurs": "Cube de couleurs",
+      "cours-fractale": "Fractale de cubes",
+      "cours-spirale": "TP spirale · Composition de cubes"
+    },
+    "modelDescriptions": {
+      "cours-arbre": "Arbre en voxels · géométrie du fichier Blender · glissez pour tourner, pincez pour zoomer.",
+      "cours-cerisier": "Cerisier en voxels · géométrie du fichier Blender · glissez pour tourner, pincez pour zoomer.",
+      "cours-personnage-voxel": "Personnage en voxels · géométrie du fichier Blender · glissez pour tourner, pincez pour zoomer.",
+      "cours-planete-voxel": "Planète en voxels · géométrie originale, matériau neutre (source sans matériau).",
+      "cours-rubiks-cube": "Rubik’s Cube · géométrie du fichier Blender · glissez pour tourner, pincez pour zoomer.",
+      "cours-cube-couleurs": "Cube de couleurs · géométrie du fichier Blender · glissez pour tourner, pincez pour zoomer.",
+      "cours-fractale": "Fractale de cubes · géométrie originale, matériau neutre (source sans matériau).",
+      "cours-spirale": "Composition de cubes du TP spirale · vue interactive libre ; le mouvement de caméra du fichier n’est pas repris."
+    },
+    "demo": null,
+    "status": "Projets de cours",
+    "context": "Travaux de cours · modèles 3D et créations pour OpenGL",
+    "note": "Les modèles conservent leur géométrie et leurs couleurs. La planète et la fractale sont présentées en gris car aucun matériau ne leur était attribué. Le TP spirale est proposé en exploration libre. Les créations à l’esthétique Minecraft ont été réalisées pour un projet OpenGL, selon mes précisions.",
+    "files": [
+      "arbre.blend",
+      "arbreceriser.blend",
+      "persoMC.blend",
+      "planetemincraft_.blend",
+      "rubisCube.blend",
+      "cubeColorRuthSuliman.blend",
+      "testFractal.blend",
+      "TP_Spiral_Ruth_Suliman_3DJV.blend"
+    ]
+  },
+  {
+    "id": "creations-3d-autodidacte",
+    "name": "Créations 3D personnelles",
+    "category": "3d",
+    "tech": [
+      "Modélisation 3D",
+      "Matériaux",
+      "Éclairage",
+      "Rendu"
+    ],
+    "summary": "Une collection de créations réalisées en autonomie pour progresser en 3D : architecture, personnage stylisé, lampe à lave, cuisine, donut et râtelier en bois.",
+    "archive": "Rendus et captures fournis par Ruth",
+    "sourceLabel": "VISUELS FOURNIS",
+    "index": 32,
+    "models": [],
+    "gallery": [
+      {
+        "src": "assets/graphics/autodidacte/immeuble.png",
+        "label": "Immeuble et mobilier urbain",
+        "alt": "Immeuble et mobilier urbain — création 3D personnelle de Ruth Suliman.",
+        "caption": "Création personnelle réalisée en autodidacte pour progresser en 3D · visuel fourni par Ruth."
+      },
+      {
+        "src": "assets/graphics/autodidacte/personnage.png",
+        "label": "Personnage stylisé",
+        "alt": "Personnage stylisé — création 3D personnelle de Ruth Suliman.",
+        "caption": "Création personnelle réalisée en autodidacte pour progresser en 3D · visuel fourni par Ruth."
+      },
+      {
+        "src": "assets/graphics/autodidacte/lampe.png",
+        "label": "Lampe à lave",
+        "alt": "Lampe à lave — création 3D personnelle de Ruth Suliman.",
+        "caption": "Création personnelle réalisée en autodidacte pour progresser en 3D · visuel fourni par Ruth."
+      },
+      {
+        "src": "assets/graphics/autodidacte/cuisine.png",
+        "label": "Cuisine en diorama",
+        "alt": "Cuisine en diorama — création 3D personnelle de Ruth Suliman.",
+        "caption": "Création personnelle réalisée en autodidacte pour progresser en 3D · visuel fourni par Ruth."
+      },
+      {
+        "src": "assets/graphics/autodidacte/donut.png",
+        "label": "Donut au glaçage violet",
+        "alt": "Donut au glaçage violet — création 3D personnelle de Ruth Suliman.",
+        "caption": "Création personnelle réalisée en autodidacte pour progresser en 3D · visuel fourni par Ruth."
+      },
+      {
+        "src": "assets/graphics/autodidacte/ratelier-bois.png",
+        "label": "Râtelier en bois",
+        "alt": "Râtelier en bois à roulettes avec une silhouette de lapin, modélisé par Ruth Suliman.",
+        "caption": "Râtelier en bois — création personnelle de Ruth Suliman, réalisée dans le cadre de son apprentissage autodidacte."
+      }
+    ],
+    "note": "Ces exercices personnels accompagnent mon apprentissage autodidacte de la modélisation, des matériaux, de la lumière et de la composition. Ils sont présentés sous forme de rendus et de captures ; les fichiers 3D ne sont pas disponibles.",
+    "files": [
+      "Immeuble et mobilier urbain — image",
+      "Personnage stylisé — image",
+      "Lampe à lave — image",
+      "Cuisine en diorama — image",
+      "Donut au glaçage violet — image",
+      "Râtelier en bois — rendu"
+    ],
+    "demo": null,
+    "status": "Projet personnel",
+    "context": "Autodidacte · pratique personnelle de la 3D",
+    "featured": false
+  },
+  {
+    "id": "maze-unreal",
+    "name": "Maze — labyrinthe Unreal",
+    "category": "game",
+    "tech": [
+      "Unreal Engine 5.1",
+      "Blueprints"
+    ],
+    "summary": "Projet de labyrinthe réalisé en troisième année avec Unreal Engine, en vue à la première personne.",
+    "archive": "Maze — projet Unreal fourni",
+    "index": 33,
+    "models": [],
+    "demo": null,
+    "videoPending": true,
+    "status": "Projet étudiant · 3e année",
+    "studyYear": 3,
+    "context": "3e année · labyrinthe en vue à la première personne",
+    "note": "Les fichiers du projet contiennent une IA de poursuite, des dégâts, des monstres, des menus et des écrans victoire/défaite. L’aperçu est la petite capture automatique conservée par Unreal.",
+    "files": [
+      "Maze.uproject",
+      "FirstPersonMap.umap",
+      "AI/BTTask_ChasePlayer",
+      "HUD_GameOver",
+      "HUD_Win"
+    ],
+    "gallery": [
+      {
+        "src": "assets/graphics/maze-apercu.png",
+        "label": "Aperçu conservé dans le projet",
+        "alt": "Petite capture sombre du labyrinthe Maze dans Unreal.",
+        "caption": "Capture automatique originale du projet Unreal · résolution limitée."
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "isaac-ar-solo",
+    "name": "The Binding of Isaac: Four Souls — AR",
+    "category": "game",
+    "tech": [
+      "Unity",
+      "Réalité augmentée",
+      "Modélisation 3D"
+    ],
+    "summary": "Projet individuel de quatrième année en réalité augmentée autour des cartes du jeu de société The Binding of Isaac: Four Souls. Les objets et créatures apparaissent en AR. Toute la modélisation 3D a été réalisée par mes soins.",
+    "archive": "Capture fournie par Ruth",
+    "index": 34,
+    "models": [],
+    "demo": null,
+    "videoPending": false,
+    "status": "Projet individuel · 4e année",
+    "context": "4e année · AR en solo · modélisation 3D personnelle",
+    "note": "Les modèles 3D sont mes créations. Les illustrations des cartes proviennent du jeu de société The Binding of Isaac et ne sont pas de ma création. Une image extraite de la démonstration est disponible, ainsi qu’un lien vers ma publication LinkedIn présentant le projet.",
+    "files": [
+      "videoframe_19548.png — image extraite de la démonstration"
+    ],
+    "gallery": [
+      {
+        "src": "assets/graphics/isaac-ar-apercu.png",
+        "label": "Aperçu de la démonstration AR",
+        "alt": "Capture Unity de la démonstration AR avec une carte du jeu de société The Binding of Isaac.",
+        "caption": "Image extraite de la démonstration fournie par Ruth · modélisation 3D personnelle ; cartes issues du jeu de société."
+      }
+    ],
+    "featured": false,
+    "studyYear": 4,
+    "externalUrl": "https://www.linkedin.com/posts/ruth-suliman-6508a2201_hello-i-introduce-you-to-my-ar-project-ugcPost-7378414095051677696-m9l4/",
+    "externalLabel": "Voir ma publication et la vidéo sur LinkedIn",
+    "externalVideo": true
+  },
+  {
+    "id": "modart-ascenseur",
+    "name": "Modart — présentation par ascenseur",
+    "category": "3d",
+    "tech": [
+      "Modélisation 3D",
+      "Développement",
+      "Présentation interactive"
+    ],
+    "summary": "Projet de cinquième année en binôme avec une personne étudiant chez Modart : une présentation sous forme d’ascenseur, où chaque étage propose un univers visuel différent.",
+    "archive": "Présentation décrite par Ruth · fichiers en cours de recherche",
+    "index": 35,
+    "models": [],
+    "demo": null,
+    "studyYear": 5,
+    "teamSize": 2,
+    "status": "Projet étudiant · 5e année",
+    "context": "5e année · collaboration en binôme avec Modart",
+    "note": "J’ai réalisé la modélisation 3D et le développement de la présentation, à partir des demandes et des choix visuels du binôme étudiant chez Modart. L’ascenseur conduit à plusieurs étages, chacun présenté différemment. Les fichiers et captures originaux ne sont pas encore disponibles.",
+    "files": [],
+    "featured": false,
+    "gallery": [
+      {
+        "src": "assets/illustrations/modart-ascenseur.svg",
+        "label": "Principe de la présentation",
+        "alt": "Schéma d’un ascenseur reliant trois étages aux compositions visuelles différentes.",
+        "caption": "Schéma explicatif créé pour le portfolio ; les visuels originaux du projet Modart sont en cours de recherche."
+      }
+    ]
+  }
+]

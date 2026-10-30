@@ -1,0 +1,15 @@
+Mazda Miata Free
+Author: crubennatan
+Source: https://www.cgtrader.com/free-3d-models/car/car/mazda-miata-free
+License displayed on the source page: Royalty Free License (no AI)
+Source supplied by the portfolio owner as car.blend on 2026-10-15.
+Presentation changes: uniform scale, placement, red paint finish and export to GLB.
+Original model geometry, UVs and packed texture retained.
+
+Game preview images: captured from the interactive web demos created for this portfolio.
+These are presentation adaptations, not original game recordings or original web builds.
+
+Kawasaki Ninja motorcycle
+Source supplied by the portfolio owner as Motorcycle+Kawasaki+Ninja+N211115.obj on 2026-10-15.
+Geometry retained, uniformly scaled and positioned beside the garage.
+The supplied OBJ has no materials or textures. Green/black presentation materials added for the portfolio.

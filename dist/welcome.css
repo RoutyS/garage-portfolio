@@ -1,0 +1,59 @@
+#welcome-screen{--intro-ink:#793c39;--intro-muted:#793c3938;--intro-paper:#eee4d9;position:fixed;inset:0;margin:0;width:100vw;max-width:none;height:100dvh;max-height:none;padding:0;border:0;border-radius:0;overflow:hidden;background:transparent;color:var(--intro-ink);box-shadow:none;outline:none}
+#welcome-screen[open]{display:block}
+#welcome-screen::backdrop{background:transparent;backdrop-filter:none}
+.welcome-surface{position:absolute;inset:0;width:100vw;height:100dvh;overflow:hidden;background:var(--intro-paper);isolation:isolate}
+.welcome-visual{position:absolute;inset:0;overflow:hidden;clip-path:ellipse(0% 0% at 50% 50%);background:radial-gradient(ellipse at 35% 15%,#9faeaa 0,transparent 55%),linear-gradient(145deg,#50707a,#394d55 60%,#723f3f);transition:clip-path 1.3s cubic-bezier(.22,.72,.12,1);will-change:clip-path}
+.welcome-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#15263124,#1526310a 30%,#15263166);pointer-events:none}
+.welcome-portrait{width:100%;height:100%;object-fit:cover;object-position:50% 38%;transform:scale(1.08);transition:transform 2s ease}
+.welcome-initials{position:absolute;inset:0;display:grid;place-items:center;color:#e7ded52b;font-family:'DM Serif Display',Georgia,serif;font-size:clamp(180px,50vw,850px);font-style:italic;letter-spacing:-.09em;padding-right:.09em}
+.welcome-lockup{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px 80px;z-index:1}
+.welcome-eyebrow{margin:0 0 22px;font-size:clamp(11px,1.1vw,16px);font-weight:600;letter-spacing:.55em;text-indent:.55em;text-transform:uppercase;transition:color .65s}
+.welcome-title{display:flex;flex-direction:column;align-items:center;margin:0!important;font-size:clamp(70px,11.8vw,190px);line-height:.83;letter-spacing:-.065em;font-weight:800}
+.welcome-title span{display:block;padding:.04em .09em .09em;background:linear-gradient(var(--intro-ink),var(--intro-ink)) bottom / 100% 0% no-repeat;-webkit-background-clip:text;background-clip:text;color:var(--intro-muted)}
+.welcome-first{font-family:'DM Serif Display',Georgia,serif;font-style:italic;font-weight:400;font-size:1.05em;letter-spacing:-.055em}
+.welcome-last{font-family:'DM Sans',sans-serif;text-transform:uppercase}
+.welcome-description{margin:28px 0 0;font-size:clamp(10px,1vw,13px);letter-spacing:.15em;line-height:1.6;transition:color .65s}
+.is-running .welcome-title span{animation:welcome-ink .32s cubic-bezier(.2,.65,.2,1) both}
+.is-running .welcome-last{animation-delay:.05s}
+@keyframes welcome-ink{to{background-size:100% 100%}}
+.is-portrait .welcome-visual{clip-path:ellipse(82% 92% at 50% 50%)}
+.is-portrait .welcome-portrait{transform:scale(1)}
+.is-portrait .welcome-title span{animation:none;background:none;color:#fff9ef;transition:color .8s;text-shadow:0 2px 30px #14222d20}
+.is-portrait .welcome-eyebrow,.is-portrait .welcome-description,.is-portrait .welcome-bottom{color:#fff9ef}
+.welcome-bottom{position:absolute;left:clamp(24px,4vw,64px);right:clamp(24px,4vw,64px);bottom:max(28px,env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;z-index:2;transition:color .65s}
+.welcome-cue{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.welcome-bottom form{margin:0}
+#welcome-enter,.welcome-enter-copy{display:inline-flex;align-items:center;gap:32px;min-height:48px;padding:10px 0;border:0;border-bottom:1px solid currentColor;border-radius:0;background:transparent;color:inherit;font:inherit;font-size:12px;letter-spacing:.08em;cursor:pointer}
+#welcome-enter span,.welcome-enter-copy span{font-size:24px;transition:transform .25s}
+#welcome-enter:hover span{transform:translate(3px,-3px)}
+#welcome-enter:focus-visible{outline:2px solid currentColor;outline-offset:7px}
+.welcome-wing{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;z-index:3;pointer-events:none;transition:transform 1.15s cubic-bezier(.76,0,.24,1);will-change:transform}
+.welcome-wing-left{left:0}
+.welcome-wing-right{right:0}
+.welcome-wing-right .welcome-surface{left:-50vw;right:auto}
+#welcome-screen.is-opening>.welcome-surface{visibility:hidden}
+#welcome-screen.is-opening .welcome-wing-left{transform:translateX(-101%)}
+#welcome-screen.is-opening .welcome-wing-right{transform:translateX(101%)}
+#welcome-reopen{padding:0;border:0;background:none;text-align:left;color:inherit;cursor:pointer}
+@media(max-width:640px){
+ .welcome-title{font-size:clamp(57px,15.4vw,98px)}
+ .welcome-lockup{padding:24px 12px 70px}
+ .welcome-eyebrow{margin-bottom:25px;font-size:10px}
+ .welcome-description{max-width:260px;margin-top:24px;font-size:10px;letter-spacing:.08em}
+ .welcome-cue{font-size:8px;letter-spacing:.1em;max-width:130px;line-height:1.6}
+ #welcome-enter,.welcome-enter-copy{font-size:11px;gap:20px}
+ .welcome-portrait{object-position:50% 35%}
+}
+@media(max-height:500px){
+ .welcome-title{font-size:clamp(42px,20dvh,90px)}
+ .welcome-eyebrow{margin-bottom:12px;font-size:9px}
+ .welcome-description{margin-top:16px;font-size:9px}
+ .welcome-lockup{padding-bottom:55px}
+ .welcome-bottom{bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .welcome-visual,.welcome-portrait,.welcome-title span,.welcome-eyebrow,.welcome-description,.welcome-bottom,.welcome-wing,#welcome-enter span{animation:none!important;transition:none!important;will-change:auto}
+ .welcome-title span{background-size:100% 100%}
+}
+
+body.night #welcome-screen{--intro-ink:#f7eadb;--intro-muted:#f7eadb38;--intro-paper:#202a32}

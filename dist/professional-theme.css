@@ -1,0 +1,76 @@
+/* Pale rose foundations, burgundy actions, warm ivory accents, charcoal typography. */
+:root{--petrol:#7c2945;--coral:#7c2945;--navy:#292b33;--ivory:#fff6f6;--muted:#62616c;--rose:#f5e5e8;--sky:#f3e8d6;--theme-line:#dfcdd2}
+body:not(.night) button:focus-visible,body:not(.night) input:focus-visible{outline-color:#7c2945}
+body:not(.night) .top-controls button,body:not(.night) .view-controls,body:not(.night) .back-street,body:not(.night) .place-bubble{background:#fff6f6f5;border-color:#eedce0;color:var(--navy)}
+body:not(.night) .top-controls button:hover,body:not(.night) .place-bubble:hover{background:#fff}
+.enter-garage,.project-shortcut,body.night .enter-garage,body.night .project-shortcut,body.night .game-start button,body.night .playable-grid .card-action{background:#7c2945;border-color:#7c2945;color:#fff;box-shadow:0 5px 22px #8d253b22}
+.enter-garage:hover,.project-shortcut:hover,body.night .enter-garage:hover,body.night .project-shortcut:hover{background:#602039}
+body:not(.night) .place-symbol{background:var(--sky);color:#665447}
+body:not(.night) .portfolio-bubble{border-color:#bc7c90;box-shadow:0 7px 30px #77263c20,0 0 0 4px #f5cbd52b}
+body:not(.night) .portfolio-bubble .place-symbol{background:#f8dce2;color:#7c2945}
+body:not(.night) .portfolio-bubble em{color:#7c2945}
+body:not(.night) .place-bubble small,body:not(.night) .place-bubble em{color:#625664}
+body:not(.night) .portfolio-bubble em{color:#7c2945}
+body:not(.night) .close-modal,body:not(.night) .search,body:not(.night) .help-panel{background:#fff8f8;border-color:var(--theme-line);color:var(--navy)}
+body:not(.night) .search input,body:not(.night) .help-panel h1{color:var(--navy)}
+body:not(.night) .help-panel p,body:not(.night) .help-panel a{color:var(--muted)}
+body:not(.night) .project-card{background:#fffbfb;border-color:var(--theme-line)}
+body:not(.night) .project-card:hover{border-color:#a05c73;box-shadow:0 8px 22px #68293616}
+body:not(.night) .card-art{background:#f2e9dc!important}
+body:not(.night) .card-art.graphic-preview{background:#fff!important}
+body:not(.night) .card-art.video-preview{background:#090b0e!important}
+body:not(.night) .card-copy p,body:not(.night) .detail-summary,body:not(.night) .detail-note,body:not(.night) .detail-source,body:not(.night) .media-caption,body:not(.night) .detail-context,body:not(.night) .graphic-counter,body:not(.night) .catalog-footer{color:var(--muted)}
+body:not(.night) .detail-media{background:#f2e9dc}
+body:not(.night) .detail-note{background:var(--rose);border-left-color:var(--coral)}
+body:not(.night) .experience-meta,body:not(.night) .skill-list article{background:#f3e8d6}
+body:not(.night) .experience-number{color:#d8c4a8}
+body:not(.night) .experience-copy>p,body:not(.night) .experience-copy ul,body:not(.night) .journey-intro,body:not(.night) .journey-footer,body:not(.night) .education-list p,body:not(.night) .skill-list p,body:not(.night) .experience-meta>p{color:var(--muted)}
+body:not(.night) .journey-skills span,body:not(.night) .skills>span{border-color:#ddcdb8;color:#665447}
+body:not(.night) .journey-tabs,body:not(.night) .journey-footer,body:not(.night) .catalog-footer,body:not(.night) .education-list article,body:not(.night) .detail-navigation{border-color:var(--theme-line)}
+body:not(.night) .eyebrow,body:not(.night) .detail-body .eyebrow{color:#7c2945}
+body:not(.night) .model-picker{color:#665447}
+body:not(.night) .model-picker select{background:#faf6ef;border-color:#d8c4a8}
+body.night .view-controls button.active,body.night .filters button.active,body.night .journey-tabs button.active,body.night .viewer-tabs .active,body.night .viewer-controls button.active{background:#7c2945;border-color:#bc7c90;color:#fff}
+body.night .place-symbol{background:#493e3c;color:#f3e8d6}
+body.night .portfolio-bubble .place-symbol{background:#53313a;color:#ffb8c4}
+body.night .portfolio-bubble{border-color:#a95566}
+body.night .experience-copy h4,body.night .journey-date{color:#ffb8c4}
+body.night .card-action:not(.playable-grid .card-action){color:#f3e8d6}
+body.night button:focus-visible,body.night input:focus-visible{outline-color:#f3e8d6}
+/* The original CV photograph stays intact and never sits behind the name. */
+#welcome-screen{--intro-ink:#7c2945;--intro-muted:#7c294538;--intro-paper:#f5e5e8}
+.welcome-visual{background:radial-gradient(ellipse at 85% 25%,#f3e8d6 0,transparent 58%),linear-gradient(130deg,#f5e5e8,#f9eeee 55%,#eee2d0)}
+.welcome-visual::after{background:linear-gradient(120deg,#fff6f614,transparent)}
+.is-portrait .welcome-title span{color:#292b33;text-shadow:none}
+.is-portrait .welcome-eyebrow{color:#7c2945}
+.is-portrait .welcome-description,.is-portrait .welcome-bottom{color:#52505c}
+.welcome-lockup{width:100%;transition:width 1.3s cubic-bezier(.22,.72,.12,1)}
+.welcome-title{transition:font-size 1.3s cubic-bezier(.22,.72,.12,1)}
+.has-portrait.is-portrait .welcome-lockup{width:58%}
+.has-portrait.is-portrait .welcome-title{font-size:clamp(32px,8.6vw,140px)}
+.has-portrait .welcome-portrait{position:absolute;inset:50% 8vw auto auto;width:min(33vw,440px);height:auto;max-height:68dvh;object-fit:contain;object-position:center;transform:translateY(-50%) scale(1.04);border-radius:6px}
+.has-portrait.is-portrait .welcome-portrait{transform:translateY(-50%) scale(1)}
+body.night #welcome-screen{--intro-ink:#ffb8c4;--intro-muted:#ffb8c438;--intro-paper:#24272e}
+body.night .welcome-visual{background:radial-gradient(ellipse at 85% 25%,#51403f 0,transparent 58%),linear-gradient(130deg,#302932,#24272e 65%,#42373a)}
+body.night .is-portrait .welcome-title span{color:#fff7f8}
+body.night .is-portrait .welcome-eyebrow{color:#ffb8c4}
+body.night .is-portrait .welcome-description,body.night .is-portrait .welcome-bottom{color:#d9d7df}
+@media(max-width:640px) and (min-height:501px){
+ .has-portrait.is-portrait .welcome-lockup{width:100%;top:54dvh;bottom:72px;justify-content:flex-start;padding:0 14px}
+ .has-portrait.is-portrait .welcome-title{font-size:clamp(44px,12.4vw,76px)}
+ .has-portrait.is-portrait .welcome-eyebrow{font-size:9px;margin-bottom:12px}
+ .has-portrait.is-portrait .welcome-description{font-size:9px;margin-top:14px}
+ .has-portrait .welcome-portrait{top:5dvh;right:50%;width:min(62vw,300px);max-height:46dvh;transform:translateX(50%) scale(1.04)}
+ .has-portrait.is-portrait .welcome-portrait{transform:translateX(50%) scale(1)}
+}
+@media(max-height:500px){
+ .has-portrait.is-portrait .welcome-title{font-size:clamp(30px,12dvh,64px)}
+ .has-portrait .welcome-portrait{max-height:68dvh;width:min(29vw,270px)}
+}
+@media(prefers-reduced-motion:reduce){.welcome-lockup,.welcome-title{transition:none}}
+
+/* Georgia is the main family used in Ruth's CV. */
+body,button,input,select,textarea{font-family:Georgia,"Times New Roman",serif}
+h1,h2,h3,h4,.welcome-last,.welcome-initials{font-family:Georgia,"Times New Roman",serif}
+.welcome-first{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;letter-spacing:-.045em}
+.welcome-title{line-height:.98;letter-spacing:-.045em}
