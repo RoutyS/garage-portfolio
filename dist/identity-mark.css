@@ -1,0 +1,24 @@
+/* The supplied ornament, mirrored horizontally with a transparent background. */
+.identity-mark.identity-mark--motif {
+  width: 48px;
+  height: 48px;
+  padding: 2px;
+  flex: 0 0 auto;
+  background: #f7f3ecd9;
+  transform: none;
+}
+
+.identity-mark--motif img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .identity-mark.identity-mark--motif {
+    width: 40px;
+    height: 40px;
+    padding: 1px;
+  }
+}
