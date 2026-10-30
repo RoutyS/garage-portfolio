@@ -6,6 +6,7 @@ import {setupJourney} from './journey.js';
 import {startRace,startGolf,startHouse} from './demos.js';
 import {mountGraphicGallery} from './graphic-gallery.js';
 import {mountProjectVideo} from './project-video.js';
+import {setupComputer} from './pc-desktop.js?v=pc-desktop-2';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const loader=new GLTFLoader();
@@ -32,8 +33,8 @@ function renderProjects(){
  $('#catalog-title span').textContent=' / '+projects.length;
  $('#empty').hidden=!!all.length;$('#result-count').textContent=all.length+' '+(filter==='playable'?'projets de jeux':'projets');$('#page-number').textContent=(catalogPage+1)+' / '+pages;$('#prev-page').disabled=catalogPage===0;$('#next-page').disabled=catalogPage===pages-1;
 }
-function openCatalog(){filter="playable";catalogPage=0;$("#search").value="";$$('.filters button').forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));renderProjects();if(!$('#catalog-dialog').open)$('#catalog-dialog').showModal()}
-$('#open-projects').onclick=openCatalog;$('#laptop-hotspot').onclick=openCatalog;$('#close-catalog').onclick=()=>$('#catalog-dialog').close();
+function openCatalog(){computer.open()}
+$('#open-projects').onclick=openCatalog;$('#laptop-hotspot').onclick=openCatalog;
 $('#search').oninput=()=>{catalogPage=0;renderProjects()};$('#prev-page').onclick=()=>{catalogPage--;renderProjects()};$('#next-page').onclick=()=>{catalogPage++;renderProjects()};
 document.addEventListener('click',e=>{const p=e.target.closest('[data-project]');if(p)openProject(p.dataset.project);const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;catalogPage=0;$$('.filters button').forEach(b=>b.classList.toggle('active',b===f));renderProjects()}});
 const toggleHelp=show=>{$('#help-panel').hidden=!show;$('#scene-help').setAttribute('aria-expanded',String(show))};$('#scene-help').onclick=()=>toggleHelp($('#help-panel').hidden);$('#close-help').onclick=()=>toggleHelp(false);
@@ -44,6 +45,7 @@ function shadows(root){root.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiv
 function disposeScene(scene){scene.traverse(o=>{o.geometry?.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>{if(!m)return;for(const v of Object.values(m))if(v?.isTexture)v.dispose();m.dispose()})})}
 
 const openJourney=setupJourney();
+const computer=setupComputer({projectCount:projects.length,openJourney,openFolder:category=>{filter=category;catalogPage=0;$('#search').value='';$$('.filters button').forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));renderProjects()}});
 startNeighborhood({loader,openCatalog,openJourney,toast,toggleHelp,reduced});
 
 // Project media controllers retained from the first version; the garage is the sole page.

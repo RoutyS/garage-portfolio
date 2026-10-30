@@ -1,5 +1,11 @@
 # Ruth — Le garage créatif
 
+## Bureau du PC
+
+Après l’introduction, le site ouvre directement un écran d’ordinateur. Le bureau propose des raccourcis vers les projets, les jeux, la 3D, le graphisme, le code et le parcours. Les projets s’affichent dans une fenêtre avec recherche, filtres et pagination ; elle peut être réduite dans la barre des tâches, restaurée, agrandie ou fermée. « Retour au garage » ferme le PC et rend la scène 3D accessible. Le PC reste accessible depuis l’ordinateur de l’atelier.
+
+`dist/pc-desktop.js` gère le bureau, les fenêtres et l’entrée automatique après l’accueil ; `dist/pc-desktop.css` définit l’écran, les icônes et l’adaptation mobile. Les projets et leurs lecteurs existants restent dans `immersive.js`.
+
 ## Publication sur GitHub Pages
 
 Le dossier `dist/` contient le site statique prêt à publier, sans installation ni compilation. Le workflow `.github/workflows/pages.yml` publie uniquement ce dossier après chaque push sur `main`. Dans les paramètres GitHub du dépôt, la source de Pages doit être « GitHub Actions ».
