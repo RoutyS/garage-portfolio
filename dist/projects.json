@@ -683,13 +683,13 @@
   },
   {
     "id": "projet-fnaf-unreal",
-    "name": "Projet FNAF Unreal",
+    "name": "FNAF — Unreal Engine",
     "category": "game",
     "tech": [
       "Unreal Engine",
       "Blueprints"
     ],
-    "summary": "Prototype Unreal en vue à la première personne avec Blueprints d’interaction, d’armes et de projectiles.",
+    "summary": "Projet FNAF réalisé avec Unreal Engine : un prototype en vue à la première personne avec des Blueprints d’interaction, d’armes et de projectiles.",
     "archive": "Projet_FNAF_unreal-main.zip",
     "index": 17,
     "models": [],
@@ -704,7 +704,7 @@
       {
         "src": "assets/illustrations/projet-fnaf-unreal.svg",
         "label": "Présentation du principe",
-        "alt": "Schéma illustrant Projet FNAF Unreal",
+        "alt": "Schéma de présentation du projet FNAF réalisé avec Unreal Engine.",
         "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
       }
     ],
@@ -1275,7 +1275,7 @@
     "videoPending": true,
     "status": "Projet étudiant · 3e année",
     "studyYear": 3,
-    "context": "3e année · labyrinthe en vue à la première personne",
+    "context": "3e année · Unreal Engine · labyrinthe en vue à la première personne",
     "note": "Les fichiers du projet contiennent une IA de poursuite, des dégâts, des monstres, des menus et des écrans victoire/défaite. L’aperçu est la petite capture automatique conservée par Unreal.",
     "files": [
       "Maze.uproject",
@@ -1334,11 +1334,12 @@
     "name": "Modart — présentation par ascenseur",
     "category": "3d",
     "tech": [
+      "Unreal Engine",
       "Modélisation 3D",
       "Développement",
       "Présentation interactive"
     ],
-    "summary": "Projet de cinquième année en binôme avec une personne étudiant chez Modart : une présentation sous forme d’ascenseur, où chaque étage propose un univers visuel différent.",
+    "summary": "Projet de cinquième année réalisé avec Unreal Engine, en binôme avec une personne étudiant chez MODART : une présentation sous forme d’ascenseur, où chaque étage propose un univers visuel différent.",
     "archive": "Présentation décrite par Ruth · fichiers en cours de recherche",
     "index": 35,
     "models": [],
@@ -1346,8 +1347,8 @@
     "studyYear": 5,
     "teamSize": 2,
     "status": "Projet étudiant · 5e année",
-    "context": "5e année · collaboration en binôme avec Modart",
-    "note": "J’ai réalisé la modélisation 3D et le développement de la présentation, à partir des demandes et des choix visuels du binôme étudiant chez Modart. L’ascenseur conduit à plusieurs étages, chacun présenté différemment. Les fichiers et captures originaux ne sont pas encore disponibles.",
+    "context": "5e année · Unreal Engine · collaboration en binôme avec MODART",
+    "note": "J’ai réalisé la modélisation 3D et le développement de la présentation sous Unreal Engine, à partir des demandes et des choix visuels du binôme étudiant chez Modart. L’ascenseur conduit à plusieurs étages, chacun présenté différemment. Les fichiers et captures originaux ne sont pas encore disponibles.",
     "files": [],
     "featured": false,
     "gallery": [

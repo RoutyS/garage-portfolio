@@ -10,7 +10,7 @@ import {setupComputer} from './pc-desktop.js?v=responsive-1';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const loader=new GLTFLoader();
-const projects=await fetch('projects.json?v=ar-projects-1').then(r=>{if(!r.ok)throw Error('Catalogue indisponible');return r.json()}).catch(()=>[]);
+const projects=await fetch('projects.json?v=projects-20261031-2').then(r=>{if(!r.ok)throw Error('Catalogue indisponible');return r.json()}).catch(()=>[]);
 const categoryNames={game:'Jeux & expériences','3d':'Création 3D',design:'2D & graphisme',simulation:'Code & simulations',ai:'Code & intelligence artificielle'};
 const modelNames={'gyrace-monowheel':'Monoroue','gyrace-circuit':'Circuit','minigolf-terrain':'Terrain','minigolf-putter':'Putter','mathbutter-suzanne':'Suzanne','mathbutter-donut':'Donut','bones-human':'Personnage','bones-dragonfly':'Libellule','bones-bunny':'Lapin','bones-teddy':'Teddy','procedural-prefab':'Élément de construction','genetic-human':'Individu'};
 Object.assign(modelNames,{'gyrace-spa':'Spa-Francorchamps','gyrace-le-mans':'Le Mans','gyrace-monaco':'Monaco','gyrace-ricardo-tormo':'Ricardo Tormo'});
