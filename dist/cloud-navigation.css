@@ -17,6 +17,13 @@
   width: min(420px, calc(100% - 56px));
   gap: 12px;
 }
+.place-navigation.is-anchored {
+  top: 0;
+  left: 0;
+  right: auto;
+  transform: translate(var(--place-left), var(--place-top));
+}
+.place-navigation.is-anchored .cloud-bubble:hover { transform: none; }
 .place-navigation .place-bubble.cloud-bubble {
   display: block;
   position: relative;
@@ -50,21 +57,17 @@
 }
 .cloud-bubble .cloud-thought-trail {
   position: absolute;
-  top: 94%;
-  left: 26%;
-  width: 44px;
-  height: 42px;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
   overflow: visible;
   fill: #fce0e5;
   stroke: #b57687;
   stroke-width: 1.5;
   pointer-events: none;
 }
-.journey-bubble .cloud-thought-trail {
-  left: auto;
-  right: 26%;
-  transform: scaleX(-1);
-}
+.cloud-thought-trail[hidden] { display: none; }
 .cloud-bubble .cloud-illustration {
   position: absolute;
   top: 5%;
@@ -133,7 +136,6 @@ body.night .cloud-bubble:focus-visible { outline-color: #fff1f5; }
   .place-navigation .cloud-bubble .cloud-copy small { font-size: 7px; letter-spacing: 1px; }
   .place-navigation .cloud-bubble .cloud-copy em { font-size: 9px; }
   .cloud-bubble .cloud-copy { gap: 2px; bottom: 10%; }
-  .cloud-bubble .cloud-thought-trail { width: 35px; height: 34px; }
 }
 @media (max-width: 360px) {
   .place-navigation { gap: 6px; }
@@ -149,7 +151,6 @@ body.night .cloud-bubble:focus-visible { outline-color: #fff1f5; }
   .place-navigation .cloud-bubble .cloud-copy small { font-size: 7px; letter-spacing: 1px; }
   .place-navigation .cloud-bubble .cloud-copy em { font-size: 9px; }
   .cloud-bubble .cloud-copy { gap: 2px; }
-  .cloud-bubble .cloud-thought-trail { width: 35px; height: 34px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cloud-bubble .cloud-shape { transition: none; }

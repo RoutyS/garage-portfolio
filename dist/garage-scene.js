@@ -3,6 +3,7 @@ import {OrbitControls} from './vendor/OrbitControls.js';
 import {mergeGeometries} from './vendor/BufferGeometryUtils.js';
 import {RoomEnvironment} from './vendor/RoomEnvironment.js';
 import {createNeighborhoodLife} from './neighborhood-life.js';
+import {createPlaceBubbles} from './place-bubbles.js?v=1';
 
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const outsideZones=new Set(['exterior','house','garden','street','bike','village']);
@@ -77,6 +78,28 @@ export async function startNeighborhood({loader,openCatalog,openJourney,toast,to
  }
  const garageBubble=$('#garage-bubble'),houseBubble=$('#house-bubble');
  const gate=new THREE.Group();gate.name='rolling-gate';scene.add(gate);for(const mesh of [...model.children])if(mesh.name==='gate')gate.add(mesh);
+ const updatePlaceBubbles=createPlaceBubbles($('.place-navigation'),host);
+ // Front sign of the garage and front gable of Ruth's own house (glTF Y-up).
+ const placeLandmarks=[{point:new THREE.Vector3(0,7.03,6.96),zone:'exterior'},
+  {point:new THREE.Vector3(14.45,8.2,2.76),zone:'house'}];
+ const placeOccluders=[...model.children.filter(mesh=>['exterior','house'].includes(mesh.name)),...gate.children];
+ const placeRay=new THREE.Raycaster(),projectedPlace=new THREE.Vector3(),placeDirection=new THREE.Vector3();
+ const lastPlaceCamera=new THREE.Matrix4();let placeVisibility=[true,true],placeAnchorsAvailable=true;
+ function projectedPlaces(){
+  const moved=!lastPlaceCamera.equals(camera.matrixWorld);
+  if(moved)lastPlaceCamera.copy(camera.matrixWorld);
+  return placeLandmarks.map(({point,zone},i)=>{
+   projectedPlace.copy(point).project(camera);
+   if(projectedPlace.z< -1||projectedPlace.z>1||Math.abs(projectedPlace.x)>.97||Math.abs(projectedPlace.y)>.97)return null;
+   if(moved){
+    const distance=placeDirection.copy(point).sub(camera.position).length();
+    placeRay.set(camera.position,placeDirection.normalize());placeRay.far=distance-.12;
+    const obstruction=placeRay.intersectObjects(placeOccluders,false)[0];
+    placeVisibility[i]=!obstruction||obstruction.object.name===zone||(zone==='exterior'&&obstruction.object.name==='gate');
+   }
+   return placeVisibility[i]?{x:(projectedPlace.x*.5+.5)*host.clientWidth,y:(-projectedPlace.y*.5+.5)*host.clientHeight}:null;
+  });
+ }
  const grain=grainTexture(37);for(const mesh of model.children){const m=mesh.material;if(/asphalt|grass|workshop grey|limestone paving/i.test(m.name)){m.map=grain;m.needsUpdate=true}if(m.isMeshStandardMaterial)m.envMapIntensity=mesh.name==='car'?1.15:.55}
  // Local contact shadow keeps the larger car grounded even in the showroom view.
  const cv=document.createElement('canvas');cv.width=cv.height=128;const cx=cv.getContext('2d'),gradient=cx.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(12,19,26,.70)');gradient.addColorStop(.55,'rgba(12,19,26,.32)');gradient.addColorStop(1,'rgba(12,19,26,0)');cx.fillStyle=gradient;cx.fillRect(0,0,128,128);const contact=new THREE.Mesh(new THREE.PlaneGeometry(7.0,10.2),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(cv),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,.104,.45);scene.add(contact);
@@ -128,9 +151,9 @@ export async function startNeighborhood({loader,openCatalog,openJourney,toast,to
   if(night)for(const lamp of headlamps){lamp.beam.position.copy(lamp.lens.localToWorld(lamp.center.clone()));lamp.beam.position.add(new THREE.Vector3(-.045,0,.16));lamp.beam.target.position.copy(lamp.beam.position).add(new THREE.Vector3(-1.55,-1.6,9.8))}
   portal.visible=!!views[view].outside&&!transition;portalMat.opacity=motionPaused?.9:.76+Math.sin(ambientTime*1.8)*.18;
   const hidePlaces=!views[view].outside||view==='bike'||!!transition;garageBubble.hidden=houseBubble.hidden=hidePlaces;
-  // CSS keeps both destinations aligned and clear of the scene controls.
   renderer.render(scene,camera);const d=camera.position.distanceTo(controls.target);$('#zoom-in').disabled=!!transition||d<=controls.minDistance+.04;$('#zoom-out').disabled=!!transition||d>=controls.maxDistance-.04;$('#enter-garage').disabled=!!transition;
+  updatePlaceBubbles(hidePlaces||!placeAnchorsAvailable?[]:projectedPlaces(),!hidePlaces&&placeAnchorsAvailable);
   const v=dotPoint.clone().project(camera);dot.style.left=`${(v.x*.5+.5)*innerWidth}px`;dot.style.top=`${(-v.y*.5+.5)*innerHeight}px`;dot.hidden=!!views[view].outside||!!transition||v.z>1||Math.abs(v.x)>.94||Math.abs(v.y)>.85||['tools','tires','car'].includes(view);
  }requestAnimationFrame(frame);
- renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();host.classList.remove('loaded');dot.hidden=true;toast('Aperçu fixe activé. Les projets restent accessibles.');$('#open-projects').hidden=false});
+ renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();host.classList.remove('loaded');dot.hidden=true;placeAnchorsAvailable=false;updatePlaceBubbles();toast('Aperçu fixe activé. Les projets restent accessibles.');$('#open-projects').hidden=false});
 }

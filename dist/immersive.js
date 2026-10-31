@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {GLTFLoader} from './vendor/GLTFLoader.js';
 import {OrbitControls} from './vendor/OrbitControls.js';
-import {startNeighborhood} from './garage-scene.js?v=layout-1';
+import {startNeighborhood} from './garage-scene.js?v=anchors-1';
 import {setupJourney} from './journey.js';
 import {startRace,startGolf,startHouse} from './demos.js';
 import {mountGraphicGallery} from './graphic-gallery.js';
