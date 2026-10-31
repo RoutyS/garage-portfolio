@@ -14,8 +14,8 @@
   font-display: swap;
 }
 .place-navigation {
-  width: min(550px, calc(100% - 56px));
-  gap: 14px;
+  width: min(420px, calc(100% - 56px));
+  gap: 12px;
 }
 .place-navigation .place-bubble.cloud-bubble {
   display: block;
@@ -50,18 +50,18 @@
 }
 .cloud-bubble .cloud-illustration {
   position: absolute;
-  top: 2%;
-  left: 10%;
-  width: 80%;
-  height: 60%;
+  top: 5%;
+  left: 15%;
+  width: 70%;
+  height: 50%;
   object-fit: contain;
   object-position: center bottom;
   pointer-events: none;
   user-select: none;
 }
 .cloud-bubble.portfolio-bubble .cloud-illustration {
-  top: -3%;
-  height: 70%;
+  top: 1%;
+  height: 58%;
 }
 .cloud-bubble .cloud-copy {
   position: absolute;
@@ -82,7 +82,7 @@
 }
 .place-navigation .cloud-bubble .cloud-copy strong {
   margin: 0;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -.5px;
@@ -107,23 +107,26 @@
 }
 body.night .cloud-bubble:focus-visible { outline-color: #fff1f5; }
 @media (max-width: 760px) {
-  .place-navigation { width: auto; gap: 10px; }
-  .place-navigation .cloud-bubble .cloud-copy strong { font-size: 16px; letter-spacing: -.45px; }
+  .place-navigation {
+    width: min(320px, calc(100% - 40px));
+    left: 50%; right: auto; transform: translateX(-50%); gap: 10px;
+  }
+  .place-navigation .cloud-bubble .cloud-copy strong { font-size: 14px; letter-spacing: -.4px; }
   .place-navigation .cloud-bubble .cloud-copy small { font-size: 7px; letter-spacing: 1px; }
   .place-navigation .cloud-bubble .cloud-copy em { font-size: 9px; }
   .cloud-bubble .cloud-copy { gap: 2px; bottom: 10%; }
 }
 @media (max-width: 360px) {
   .place-navigation { gap: 6px; }
-  .place-navigation .place-bubble.cloud-bubble { aspect-ratio: 1.02; }
+  .place-navigation .place-bubble.cloud-bubble { aspect-ratio: 1.1; }
   .place-navigation .cloud-bubble .cloud-copy strong { font-size: 13.5px; letter-spacing: -.4px; }
   .place-navigation .cloud-bubble .cloud-copy em { font-size: 8px; }
-  .cloud-bubble .cloud-illustration { height: 58%; }
-  .cloud-bubble.portfolio-bubble .cloud-illustration { height: 66%; }
+  .cloud-bubble .cloud-illustration { height: 47%; }
+  .cloud-bubble.portfolio-bubble .cloud-illustration { height: 56%; }
 }
 @media (max-height: 600px) and (min-width: 501px) {
-  .place-navigation { width: 380px; gap: 10px; }
-  .place-navigation .cloud-bubble .cloud-copy strong { font-size: 16px; }
+  .place-navigation { width: 320px; left: auto; right: calc(12px + var(--safe-right)); transform: none; gap: 10px; }
+  .place-navigation .cloud-bubble .cloud-copy strong { font-size: 14px; }
   .place-navigation .cloud-bubble .cloud-copy small { font-size: 7px; letter-spacing: 1px; }
   .place-navigation .cloud-bubble .cloud-copy em { font-size: 9px; }
   .cloud-bubble .cloud-copy { gap: 2px; }
