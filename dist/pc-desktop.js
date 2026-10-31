@@ -31,9 +31,9 @@ export function setupComputer({openFolder, openJourney, projectCount}) {
   dialog.innerHTML = `
     <div class="pc-camera" aria-hidden="true"><i></i></div>
     <div class="pc-screen">
-      <div class="pc-menubar"><span id="computer-title"><b>ruth<span>OS</span></b><span class="pc-menubar-label">Mon espace créatif</span></span><button class="pc-exit" data-pc-exit>↗ <span>Retour au garage</span></button></div>
+      <div class="pc-menubar"><span id="computer-title"><b>Ruth<span>OS</span></b><span class="pc-menubar-label">Mon espace créatif</span></span><button class="pc-exit" data-pc-exit>↗ <span>Retour au garage</span></button></div>
       <div class="pc-workspace">
-        <div class="pc-wallpaper" aria-hidden="true"><div class="pc-orbit"></div><div class="pc-wordmark">ruth<span>.</span><small>LE GARAGE CRÉATIF</small></div><span class="pc-wallpaper-caption">Un bureau ouvert sur mes idées.</span></div>
+        <div class="pc-wallpaper" aria-hidden="true"><div class="pc-orbit"></div><div class="pc-wordmark">Ruth<span>.</span><small>LE GARAGE CRÉATIF</small></div><span class="pc-wallpaper-caption">Un bureau ouvert sur mes idées.</span></div>
         <nav class="pc-shortcuts" aria-label="Dossiers du bureau">
           ${folders.map(([key, label, symbol]) => `<button class="pc-shortcut pc-icon-${symbol}" data-pc-folder="${key}"><span class="pc-icon">${icon(symbol)}</span><span>${label}</span></button>`).join('')}
           <button class="pc-shortcut pc-icon-person" data-pc-journey><span class="pc-icon">${icon('person')}</span><span>Mon parcours</span></button>
@@ -44,11 +44,11 @@ export function setupComputer({openFolder, openJourney, projectCount}) {
           <div class="pc-address"><button id="pc-home" aria-label="Revenir au bureau" title="Bureau">⌂</button><span>Bureau</span><span aria-hidden="true">›</span><strong id="pc-folder-label">Mes projets</strong></div>
           <div class="pc-explorer-content"></div>
         </section>
-        <div class="pc-start-menu" id="pc-start-menu" hidden><div class="pc-menu-profile"><span>r.</span><div><strong>Ruth Suliman</strong><small>Création 3D · Jeux · Design</small></div></div><p>MES RACCOURCIS</p>${folders.map(([key, label, symbol]) => `<button data-pc-folder="${key}">${icon(symbol)}<span>${label}</span><span aria-hidden="true">↗</span></button>`).join('')}<button data-pc-journey>${icon('person')}<span>Mon parcours</span><span aria-hidden="true">↗</span></button><button class="pc-menu-exit" data-pc-exit>${icon('power')}<span>Retour au garage</span></button></div>
+        <div class="pc-start-menu" id="pc-start-menu" hidden><div class="pc-menu-profile"><span>R.</span><div><strong>Ruth Suliman</strong><small>Création 3D · Jeux · Design</small></div></div><p>MES RACCOURCIS</p>${folders.map(([key, label, symbol]) => `<button data-pc-folder="${key}">${icon(symbol)}<span>${label}</span><span aria-hidden="true">↗</span></button>`).join('')}<button data-pc-journey>${icon('person')}<span>Mon parcours</span></button><button class="pc-menu-exit" data-pc-exit>${icon('power')}<span>Retour au garage</span></button></div>
       </div>
       <div class="pc-taskbar"><button id="pc-start" class="pc-start" aria-label="Ouvrir les raccourcis du PC" aria-expanded="false" aria-controls="pc-start-menu">${icon('start')}<span>Bureau</span></button><span class="pc-taskbar-divider" aria-hidden="true"></span><button id="pc-task-projects" class="pc-task" aria-label="Ouvrir la fenêtre des projets" aria-pressed="false">${icon('folder')}<span>Mes projets</span></button><button class="pc-task pc-task-journey" data-pc-journey aria-label="Ouvrir mon parcours">${icon('person')}</button><div class="pc-tray"><span class="pc-session"><i aria-hidden="true"></i>Ruth</span><time id="pc-clock"></time></div></div>
     </div>
-    <div class="pc-monitor-chin" aria-hidden="true"><span>ruth.</span><i></i></div>`;
+    <div class="pc-monitor-chin" aria-hidden="true"><span>Ruth.</span><i></i></div>`;
 
   const $ = selector => dialog.querySelector(selector);
   const explorer = $('.pc-explorer');
