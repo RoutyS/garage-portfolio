@@ -1,12 +1,12 @@
 import * as THREE from 'three';
 import {GLTFLoader} from './vendor/GLTFLoader.js';
 import {OrbitControls} from './vendor/OrbitControls.js';
-import {startNeighborhood} from './garage-scene.js';
+import {startNeighborhood} from './garage-scene.js?v=layout-1';
 import {setupJourney} from './journey.js';
 import {startRace,startGolf,startHouse} from './demos.js';
 import {mountGraphicGallery} from './graphic-gallery.js';
 import {mountProjectVideo} from './project-video.js';
-import {setupComputer} from './pc-desktop.js?v=ruth-capital-1';
+import {setupComputer} from './pc-desktop.js?v=layout-1';
 import {filterProjects} from './project-filters.js?v=1';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;

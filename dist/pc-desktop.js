@@ -33,12 +33,14 @@ export function setupComputer({openFolder, openJourney, projectCount}) {
     <div class="pc-screen">
       <div class="pc-menubar"><span id="computer-title"><b>Ruth<span>OS</span></b><span class="pc-menubar-label">Mon espace créatif</span></span><button class="pc-exit" data-pc-exit>↗ <span>Retour au garage</span></button></div>
       <div class="pc-workspace">
-        <div class="pc-wallpaper" aria-hidden="true"><div class="pc-orbit"></div><div class="pc-wordmark">Ruth<span>.</span><small>LE GARAGE CRÉATIF</small></div><span class="pc-wallpaper-caption">Un bureau ouvert sur mes idées.</span></div>
+        <div class="pc-wallpaper" aria-hidden="true"><div class="pc-orbit"></div><div class="pc-wordmark">Ruth<span>.</span></div></div>
+        <div class="pc-home-layout">
         <nav class="pc-shortcuts" aria-label="Dossiers du bureau">
           ${folders.map(([key, label, symbol]) => `<button class="pc-shortcut pc-icon-${symbol}" data-pc-folder="${key}"><span class="pc-icon">${icon(symbol)}</span><span>${label}</span></button>`).join('')}
           <button class="pc-shortcut pc-icon-person" data-pc-journey><span class="pc-icon">${icon('person')}</span><span>Mon parcours</span></button>
         </nav>
-        <div class="pc-welcome-note"><span class="pc-note-pin" aria-hidden="true"></span><span class="pc-note-label">À EXPLORER</span><p>Bienvenue<br>sur mon bureau.</p><span>${projectCount} projets, des idées<br>et un peu de moi.</span><small>Un clic sur un dossier suffit.</small></div>
+        <div class="pc-welcome-note"><span class="pc-note-pin" aria-hidden="true"></span><span class="pc-note-label">À EXPLORER</span><p>Bienvenue<br>sur mon bureau.</p><span>${projectCount} projets, des idées<br> et un peu de moi.</span></div>
+        </div>
         <section class="pc-explorer" aria-labelledby="catalog-title" hidden>
           <div class="pc-titlebar"><span class="pc-window-name">${icon('folder')}<span id="pc-window-label" tabindex="-1">Mes projets</span></span><div class="pc-window-controls"><button id="pc-minimize" aria-label="Réduire la fenêtre des projets" title="Réduire">−</button><button id="pc-maximize" aria-label="Agrandir la fenêtre des projets" aria-pressed="false" title="Agrandir">□</button></div></div>
           <div class="pc-address"><button id="pc-home" aria-label="Revenir au bureau" title="Bureau">⌂</button><span>Bureau</span><span aria-hidden="true">›</span><strong id="pc-folder-label">Mes projets</strong></div>

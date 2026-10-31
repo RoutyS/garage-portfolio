@@ -1,4 +1,4 @@
-// A self-contained intro: name fill, full-screen portrait, then two opening panels.
+// A self-contained intro: typewritten name, portrait reveal, then two opening panels.
 (()=>{
  const welcome=document.getElementById('welcome-screen');
  if(!welcome)return;
@@ -16,10 +16,10 @@
  function begin(){
   reset();
   if(reduced.matches){welcome.classList.add('is-portrait');return}
-  // Reading a layout value restarts the ink animation when replaying the intro.
+  // Reading a layout value restarts the typing when replaying the intro.
   void surface.offsetWidth;welcome.classList.add('is-running');
-  later(showPortrait,450);
-  later(leave,6150);
+  later(showPortrait,3250);
+  later(leave,7150);
  }
  function showPortrait(){portraitAt=performance.now();welcome.classList.add('is-portrait')}
  function split(){

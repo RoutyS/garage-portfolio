@@ -1,0 +1,29 @@
+/* Reveal whole text boxes in steps: their size and the 3D baseline stay stable. */
+#welcome-screen.is-running:not(.is-portrait) .welcome-title > span {
+  background: none; color: var(--intro-ink); text-shadow: none;
+}
+#welcome-screen.is-running:not(.is-portrait) .welcome-first {
+  animation: welcome-type-line .8s steps(4, end) .2s both;
+}
+#welcome-screen.is-running:not(.is-portrait) .welcome-last {
+  animation: welcome-type-line 1.05s steps(7, end) 1.05s both;
+}
+#welcome-screen.is-running:not(.is-portrait) .welcome-description {
+  animation: welcome-type-line .95s steps(32, end) 2.15s both;
+}
+#welcome-screen.is-running:not(.is-portrait) .welcome-description::after {
+  content: ''; display: inline-block; height: 1em; margin-left: 4px;
+  border-right: 1px solid currentColor; vertical-align: -.1em;
+  animation: welcome-type-caret .6s step-end infinite;
+}
+@keyframes welcome-type-line {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes welcome-type-caret { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  #welcome-screen .welcome-title > span, #welcome-screen .welcome-description {
+    animation: none !important; clip-path: none !important;
+  }
+  #welcome-screen .welcome-description::after { display: none !important; }
+}

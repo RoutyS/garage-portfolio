@@ -76,7 +76,6 @@ export async function startNeighborhood({loader,openCatalog,openJourney,toast,to
   const halo=new THREE.Mesh(new THREE.PlaneGeometry(w+.22,h+.22),new THREE.MeshBasicMaterial({color:0xf2ae7e,transparent:true,opacity:.12,depthWrite:false,toneMapped:false}));halo.position.set(x,y,6.97);portal.add(halo);
  }
  const garageBubble=$('#garage-bubble'),houseBubble=$('#house-bubble');
- const garageAnchor=new THREE.Vector3(-.7,8.3,6.9),houseAnchor=new THREE.Vector3(14.4,11.8,1);
  const gate=new THREE.Group();gate.name='rolling-gate';scene.add(gate);for(const mesh of [...model.children])if(mesh.name==='gate')gate.add(mesh);
  const grain=grainTexture(37);for(const mesh of model.children){const m=mesh.material;if(/asphalt|grass|workshop grey|limestone paving/i.test(m.name)){m.map=grain;m.needsUpdate=true}if(m.isMeshStandardMaterial)m.envMapIntensity=mesh.name==='car'?1.15:.55}
  // Local contact shadow keeps the larger car grounded even in the showroom view.
@@ -129,23 +128,7 @@ export async function startNeighborhood({loader,openCatalog,openJourney,toast,to
   if(night)for(const lamp of headlamps){lamp.beam.position.copy(lamp.lens.localToWorld(lamp.center.clone()));lamp.beam.position.add(new THREE.Vector3(-.045,0,.16));lamp.beam.target.position.copy(lamp.beam.position).add(new THREE.Vector3(-1.55,-1.6,9.8))}
   portal.visible=!!views[view].outside&&!transition;portalMat.opacity=motionPaused?.9:.76+Math.sin(ambientTime*1.8)*.18;
   const hidePlaces=!views[view].outside||view==='bike'||!!transition;garageBubble.hidden=houseBubble.hidden=hidePlaces;
-  if(!hidePlaces){
-   camera.updateMatrixWorld();
-   const rect=host.getBoundingClientRect(),compact=rect.width<760;
-   const points=[garageAnchor,houseAnchor].map(a=>a.clone().project(camera));
-   const width=compact?154:202;
-   const projected=points.map(p=>({x:(p.x*.5+.5)*rect.width,y:(-p.y*.5+.5)*rect.height,p}));
-   const overlap=Math.abs(projected[0].x-projected[1].x)<width+16;
-   [garageBubble,houseBubble].forEach((el,i)=>{
-    const {x,y,p}=projected[i];
-    el.hidden=p.z>1||p.z< -1||x<0||x>rect.width||y<0||y>rect.height;
-    const left=THREE.MathUtils.clamp(x-width/2,8,Math.max(8,rect.width-width-8));
-    const lift=overlap&&i===1?120:28;
-    el.style.left=left+'px';el.style.top=(y-lift)+'px';
-    el.style.setProperty('--anchor-x',(x-left)+'px');
-    el.style.setProperty('--anchor-length',lift+'px');
-   });
-  }
+  // CSS keeps both destinations aligned and clear of the scene controls.
   renderer.render(scene,camera);const d=camera.position.distanceTo(controls.target);$('#zoom-in').disabled=!!transition||d<=controls.minDistance+.04;$('#zoom-out').disabled=!!transition||d>=controls.maxDistance-.04;$('#enter-garage').disabled=!!transition;
   const v=dotPoint.clone().project(camera);dot.style.left=`${(v.x*.5+.5)*innerWidth}px`;dot.style.top=`${(-v.y*.5+.5)*innerHeight}px`;dot.hidden=!!views[view].outside||!!transition||v.z>1||Math.abs(v.x)>.94||Math.abs(v.y)>.85||['tools','tires','car'].includes(view);
  }requestAnimationFrame(frame);
