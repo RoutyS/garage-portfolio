@@ -1,0 +1,57 @@
+/* Ruth's selected pairing. Both families are served with the portfolio. */
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./assets/fonts/quicksand-variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Parisienne';
+  src: url('./assets/fonts/parisienne-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+:root {
+  --font-text: 'Quicksand', 'DM Sans', Arial, sans-serif;
+  --font-signature: 'Parisienne', cursive;
+}
+body, button, input, select, textarea, h1, h2, h3, h4,
+#catalog-dialog.pc-desktop, .pc-desktop button, .pc-desktop input,
+.pc-desktop h2, .pc-desktop h3, .welcome-last, .welcome-initials,
+.welcome-description, .help-panel h1, .exterior-caption h1,
+.pc-wordmark small, .pc-wallpaper-caption, .pc-welcome-note p,
+.pc-menu-profile > span, .detail-source code, .source-list {
+  font-family: var(--font-text);
+  font-variant-numeric: lining-nums;
+}
+.welcome-title { font-weight: 500; line-height: 1.08; letter-spacing: 0; }
+.welcome-title .welcome-first {
+  font-family: var(--font-signature);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3em;
+  line-height: 1.12;
+  letter-spacing: 0;
+  padding: .05em .14em .04em;
+}
+.welcome-last { font-size: .58em; font-weight: 500; letter-spacing: .12em; }
+.welcome-description, .aligned-dimension { font-variant-numeric: lining-nums; font-feature-settings: 'lnum' 1; }
+.aligned-dimension { vertical-align: baseline; }
+.identity-name, .pc-wordmark, .pc-monitor-chin, #computer-title b {
+  font-family: var(--font-signature);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+}
+.identity-name { font-size: 32px; line-height: 1.1; }
+.pc-wordmark { line-height: 1.15; }
+.pc-wordmark small, .pc-wallpaper-caption, .pc-welcome-note p { font-style: normal; }
+#computer-title b { font-size: 25px; line-height: 1.1; }
+#computer-title b > span { font-family: var(--font-text); font-size: 9px; }
+.pc-monitor-chin { font-size: 17px; }
+.welcome-initials { font-style: normal; }
+@media (max-width: 1000px), (max-height: 600px) {
+  .pc-monitor-chin { font-size: 12px; }
+}

@@ -6,6 +6,10 @@ Après l’introduction, le site ouvre directement un écran d’ordinateur. Le 
 
 `dist/pc-desktop.js` gère le bureau, les fenêtres et l’entrée automatique après l’accueil ; `dist/pc-desktop.css` définit l’écran, les icônes et l’adaptation mobile. Les projets et leurs lecteurs existants restent dans `immersive.js`.
 
+## Typographie
+
+Le prénom Ruth utilise Parisienne ; les titres, menus et textes utilisent Quicksand. `dist/typography.css` applique cette paire après les thèmes et conserve des chiffres alignés dans « 3D ». Les polices sont embarquées et préchargées depuis `dist/assets/fonts/`, avec leurs licences SIL Open Font License.
+
 ## Filtres par technologie
 
 Le catalogue combine les catégories existantes avec les filtres Unity, Unreal et AR. Les technologies sont reconnues à partir des compétences déclarées dans chaque fiche : AR désigne la réalité augmentée, sans inclure le nom de l’entreprise AR Compétences. La recherche et la pagination respectent les deux groupes de filtres. Ouvrir un dossier du bureau réinitialise le filtre technologique. `dist/project-filters.js` contient les règles de classement.
