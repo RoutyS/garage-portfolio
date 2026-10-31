@@ -1,0 +1,133 @@
+/* The two illustrated destination buttons have their own type and cloud shape. */
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/poppins-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/poppins-semibold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+.place-navigation {
+  width: min(550px, calc(100% - 56px));
+  gap: 14px;
+}
+.place-navigation .place-bubble.cloud-bubble {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 1.1;
+  padding: 0;
+  border: 0;
+  border-radius: 36%;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  color: #621d34;
+  text-align: center;
+  font-family: 'Poppins', var(--font-text);
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+}
+.cloud-bubble .cloud-shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: #fce0e5;
+  stroke: #b57687;
+  stroke-width: 1.7;
+  filter: drop-shadow(0 7px 7px #62273924);
+  transition: fill .18s, filter .18s;
+  pointer-events: none;
+}
+.cloud-bubble .cloud-illustration {
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+  user-select: none;
+}
+.cloud-bubble.portfolio-bubble .cloud-illustration {
+  top: -3%;
+  height: 70%;
+}
+.cloud-bubble .cloud-copy {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 11%;
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  pointer-events: none;
+}
+.place-navigation .cloud-bubble .cloud-copy small {
+  color: #78334a;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 1.6px;
+}
+.place-navigation .cloud-bubble .cloud-copy strong {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -.5px;
+  white-space: nowrap;
+}
+.place-navigation .cloud-bubble .cloud-copy em {
+  display: block;
+  color: #78334a;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.place-navigation .cloud-bubble:hover .cloud-shape {
+  fill: #ffe9ed;
+  filter: drop-shadow(0 10px 9px #62273938);
+}
+.place-navigation .cloud-bubble:focus-visible {
+  outline: 3px solid #7c2945;
+  outline-offset: 3px;
+}
+body.night .cloud-bubble:focus-visible { outline-color: #fff1f5; }
+@media (max-width: 760px) {
+  .place-navigation { width: auto; gap: 10px; }
+  .place-navigation .cloud-bubble .cloud-copy strong { font-size: 16px; letter-spacing: -.45px; }
+  .place-navigation .cloud-bubble .cloud-copy small { font-size: 7px; letter-spacing: 1px; }
+  .place-navigation .cloud-bubble .cloud-copy em { font-size: 9px; }
+  .cloud-bubble .cloud-copy { gap: 2px; bottom: 10%; }
+}
+@media (max-width: 360px) {
+  .place-navigation { gap: 6px; }
+  .place-navigation .place-bubble.cloud-bubble { aspect-ratio: 1.02; }
+  .place-navigation .cloud-bubble .cloud-copy strong { font-size: 13.5px; letter-spacing: -.4px; }
+  .place-navigation .cloud-bubble .cloud-copy em { font-size: 8px; }
+  .cloud-bubble .cloud-illustration { height: 58%; }
+  .cloud-bubble.portfolio-bubble .cloud-illustration { height: 66%; }
+}
+@media (max-height: 600px) and (min-width: 501px) {
+  .place-navigation { width: 380px; gap: 10px; }
+  .place-navigation .cloud-bubble .cloud-copy strong { font-size: 16px; }
+  .place-navigation .cloud-bubble .cloud-copy small { font-size: 7px; letter-spacing: 1px; }
+  .place-navigation .cloud-bubble .cloud-copy em { font-size: 9px; }
+  .cloud-bubble .cloud-copy { gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cloud-bubble .cloud-shape { transition: none; }
+}
