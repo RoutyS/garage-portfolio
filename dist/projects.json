@@ -651,31 +651,32 @@
   },
   {
     "id": "projet-ar-2-multi",
-    "name": "Projet AR 2 Multi",
+    "name": "Escape game en AR",
     "category": "game",
     "tech": [
       "Unity",
-      "C#"
+      "C#",
+      "Réalité augmentée"
     ],
-    "summary": "Archive Unity préparatoire contenant une scène SampleScene.",
+    "summary": "Escape game en réalité augmentée réalisé en binôme en quatrième année, avec Unity et C#.",
     "archive": "Projet_AR_2_multi-main.zip",
     "index": 16,
     "models": [],
-    "note": "Structure préparatoire Unity avec une SampleScene. L’archive ne contient pas encore de logique personnalisée de réalité augmentée ou de multijoueur.",
+    "note": "Projet réalisé en équipe de deux. Le visuel présente le thème du projet ; la vidéo de démonstration sera ajoutée prochainement.",
     "files": [
       "Projet_AR_2Multi/Assets/Scenes/SampleScene.unity"
     ],
     "demo": null,
-    "status": "Projet étudiant · 4e année",
+    "status": "Projet en binôme · 4e année",
     "featured": false,
     "studyYear": 4,
-    "context": "4e année · Unity / C#",
+    "context": "4e année · Escape game en AR · projet en binôme",
     "gallery": [
       {
-        "src": "assets/illustrations/projet-ar-2-multi.svg",
-        "label": "Présentation du principe",
-        "alt": "Schéma illustrant Projet AR 2 Multi",
-        "caption": "Illustration explicative créée pour le portfolio ; ce n’est pas une capture du logiciel."
+        "src": "assets/illustrations/projet-ar-2-multi.svg?v=escape-ar-1",
+        "label": "Escape game en réalité augmentée",
+        "alt": "Illustration de présentation : une porte et une clé dans un écran de téléphone, pour l’escape game en réalité augmentée réalisé en binôme.",
+        "caption": "Illustration de présentation de l’escape game en AR · projet réalisé en binôme ; ce n’est pas une capture du jeu."
       }
     ],
     "videoPending": true
@@ -1308,8 +1309,8 @@
     "models": [],
     "demo": null,
     "videoPending": false,
-    "status": "Projet individuel · 4e année",
-    "context": "4e année · AR en solo · modélisation 3D personnelle",
+    "status": "Projet solo · 4e année",
+    "context": "4e année · Projet AR en solo · modélisation 3D personnelle",
     "note": "Les modèles 3D sont mes créations. Les illustrations des cartes proviennent du jeu de société The Binding of Isaac et ne sont pas de ma création. Une image extraite de la démonstration est disponible, ainsi qu’un lien vers ma publication LinkedIn présentant le projet.",
     "files": [
       "videoframe_19548.png — image extraite de la démonstration"
