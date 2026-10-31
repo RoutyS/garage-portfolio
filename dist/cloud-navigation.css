@@ -42,6 +42,12 @@
   isolation: isolate;
   -webkit-tap-highlight-color: transparent;
 }
+/* Interaction feedback follows the SVG instead of the button's rounded box. */
+.place-navigation .place-bubble.cloud-bubble:is(:hover, :focus-visible, :active) {
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+}
 .cloud-bubble .cloud-shape {
   position: absolute;
   inset: 0;
@@ -55,6 +61,15 @@
   transition: fill .18s, filter .18s;
   pointer-events: none;
 }
+.cloud-shape .cloud-outline {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 14;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity .18s;
+}
+.cloud-bubble:is(:hover, :focus-visible) .cloud-outline { opacity: 1; }
 .cloud-bubble .cloud-thought-trail {
   position: absolute;
   top: 0;
@@ -122,11 +137,11 @@
   filter: drop-shadow(0 10px 9px #62273938);
 }
 .place-navigation .cloud-bubble:hover .cloud-thought-trail { fill: #ffe9ed; }
-.place-navigation .cloud-bubble:focus-visible {
-  outline: 3px solid #7c2945;
-  outline-offset: 3px;
+.place-navigation .cloud-bubble:focus-visible .cloud-shape {
+  stroke: #7c2945;
+  stroke-width: 4;
 }
-body.night .cloud-bubble:focus-visible { outline-color: #fff1f5; }
+.place-navigation .cloud-bubble:focus-visible .cloud-outline { stroke-width: 18; }
 @media (max-width: 760px) {
   .place-navigation {
     width: min(320px, calc(100% - 40px));
@@ -153,5 +168,5 @@ body.night .cloud-bubble:focus-visible { outline-color: #fff1f5; }
   .cloud-bubble .cloud-copy { gap: 2px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .cloud-bubble .cloud-shape { transition: none; }
+  .cloud-bubble .cloud-shape, .cloud-shape .cloud-outline { transition: none; }
 }
