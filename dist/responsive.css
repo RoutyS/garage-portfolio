@@ -1,0 +1,227 @@
+/* Shared responsive rules, loaded after the visual themes. */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+html { -webkit-text-size-adjust: 100%; }
+.pc-screen, .pc-explorer-content, .catalog-toolbar, .catalog-header > div,
+.detail-media, .journey-content, .experience-copy { min-width: 0; }
+.detail-body, .journey-content { overflow-y: auto; overscroll-behavior: contain; }
+.detail-body > * { flex-shrink: 0; }
+.detail-summary, .detail-note, .detail-body h2, .card-copy { overflow-wrap: anywhere; }
+.detail-summary, .detail-note { display: block; -webkit-line-clamp: unset; }
+.experience-card, .education-list { min-height: 100%; height: auto; }
+.journey-content { scrollbar-gutter: stable; }
+.help-panel { max-height: calc(100dvh - 100px - var(--safe-bottom)); overflow-y: auto; }
+#welcome-reopen { pointer-events: auto; }
+.pc-start-menu { max-height: calc(100% - 18px); overflow-y: auto; overscroll-behavior: contain; }
+
+/* Use the entire screen on tablets and phones; the content, not the viewport,
+   scrolls. This also leaves room when a mobile keyboard reduces the height. */
+@media (max-width: 1000px), (max-height: 600px) {
+  #catalog-dialog.pc-desktop {
+    width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh;
+    margin: 0; border: 0; border-radius: 0;
+    padding: calc(8px + var(--safe-top)) calc(5px + var(--safe-right)) var(--safe-bottom) calc(5px + var(--safe-left)) !important;
+  }
+  .pc-camera { top: calc(2px + var(--safe-top)); }
+  .pc-monitor-chin { height: 16px; font-size: 11px; }
+  .pc-monitor-chin i { top: 6px; }
+  .pc-menubar { min-height: 44px; flex: none; padding: 0 12px; }
+  .pc-exit { min-height: 44px; font-size: 12px; }
+  .pc-explorer, .pc-explorer.is-maximized { inset: 0; border: 0; border-radius: 0; }
+  .pc-titlebar { min-height: 44px; }
+  .pc-window-controls button { min-width: 44px; min-height: 44px; }
+  #pc-maximize { display: none; }
+  .pc-address { padding: 2px 12px; }
+  .pc-address button { width: 44px; height: 36px; }
+  .pc-explorer-content {
+    display: flex; flex-direction: column; overflow-y: auto;
+    overscroll-behavior: contain; padding: 16px; gap: 14px;
+  }
+  .pc-explorer-content > * { flex: none; }
+  .pc-desktop .catalog-header h2 { font-size: clamp(21px, 3vw, 28px); }
+  .pc-desktop .catalog-intro { font-size: 12px; line-height: 1.6; }
+  .pc-desktop .catalog-toolbar { display: flex; flex-direction: column; align-items: stretch; gap: 10px; }
+  .pc-desktop .filters { display: grid; width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+  .pc-desktop .filters button { min-height: 44px; padding: 8px 5px; font-size: 12px; white-space: normal; }
+  .pc-desktop .search { width: 100%; max-width: none; margin: 0; flex: none; padding: 10px 12px; }
+  .pc-desktop .search input { min-width: 0; font-size: 16px; }
+  .pc-desktop #project-grid,
+  .pc-desktop #project-grid:is(.playable-grid, .model-grid, .design-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto; overflow: visible; gap: 14px; padding: 2px;
+  }
+  .pc-desktop #project-grid .card-art { max-height: none; aspect-ratio: 4 / 3; }
+  .pc-desktop #project-grid .card-copy { padding: 12px; }
+  .pc-desktop #project-grid .card-copy h3 { font-size: 15px; }
+  .pc-desktop #project-grid .card-copy p, .pc-desktop #project-grid .card-action { font-size: 12px; }
+  .pc-desktop #project-grid .card-badge { font-size: 8px; max-width: calc(100% - 12px); }
+  .pc-desktop .catalog-footer { font-size: 12px; gap: 10px; padding-top: 12px; }
+  .pc-desktop .catalog-footer > div { gap: 10px; }
+  .pc-desktop .catalog-footer button { min-width: 44px; min-height: 44px; }
+  .pc-desktop #empty { position: static; width: 100%; padding: 24px 0; }
+  .pc-start-menu > button { min-height: 44px; font-size: 13px; }
+  .pc-taskbar { min-height: 56px; padding: 6px 8px; }
+  .pc-start, .pc-task { min-width: 44px; min-height: 44px; }
+  .pc-shortcuts {
+    inset: 16px auto 16px 12px; width: min(330px, calc(100% - 24px));
+    grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 6px;
+    align-content: start; overflow-y: auto; padding: 3px;
+  }
+  .pc-shortcut { min-height: 104px; font-size: 12px; gap: 8px; }
+  .pc-wordmark { top: auto; bottom: 50px; left: auto; right: 24px; transform: none; font-size: clamp(86px, 18vw, 170px); }
+  .pc-wordmark small { font-size: 8px; letter-spacing: 3px; }
+  .pc-welcome-note { display: none; }
+}
+
+@media (max-width: 400px) {
+  .pc-desktop #project-grid,
+  .pc-desktop #project-grid:is(.playable-grid, .model-grid, .design-grid) { grid-template-columns: minmax(0, 1fr); }
+  .pc-desktop .catalog-footer { flex-wrap: wrap; }
+  .pc-desktop .catalog-footer > div { margin-left: auto; }
+  .pc-shortcuts { gap: 8px 2px; }
+  .pc-shortcut { font-size: 11px; padding-inline: 2px; }
+  .pc-exit { font-size: 11px; }
+}
+
+/* Project descriptions stay complete, including on short desktop windows. */
+@media (max-width: 760px) {
+  #project-dialog, #project-dialog.model-view {
+    width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh;
+    margin: 0; border: 0; border-radius: 0; overflow-y: auto;
+    padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
+    overscroll-behavior: contain;
+  }
+  #project-dialog[open], #project-dialog.model-view[open] { display: block; }
+  #project-dialog > .close-modal {
+    position: sticky; top: calc(8px + var(--safe-top)); right: auto;
+    margin: 8px 8px -52px auto; width: 44px; height: 44px;
+  }
+  .detail-media { border-radius: 0; grid-template-rows: auto auto auto auto; }
+  .viewer-tabs { padding: 12px 60px 12px 12px; min-height: 64px; }
+  .viewer-tabs button, .viewer-controls button { min-height: 44px; font-size: 12px; padding: 8px 10px; }
+  #detail-stage { height: clamp(220px, 43svh, 440px); }
+  .viewer-controls { padding: 8px 12px; gap: 6px; }
+  .media-caption { font-size: 11px; line-height: 1.6; padding: 8px 16px 16px; }
+  .detail-body, .gallery-project .detail-body { padding: 24px 20px; overflow: visible; }
+  .detail-body h2, .gallery-project .detail-body h2 { font-size: 28px; line-height: 1.2; }
+  .detail-context, .detail-body .eyebrow { font-size: 11px; }
+  .detail-summary { font-size: 14px; line-height: 1.75; }
+  .detail-note { display: block; font-size: 12px; line-height: 1.7; padding: 12px; margin: 16px 0; }
+  .skills > span { font-size: 11px; padding: 7px 9px; }
+  .detail-source, .detail-source code { font-size: 11px; }
+  .detail-navigation button { min-height: 44px; font-size: 12px; }
+  .graphic-counter { font-size: 11px; }
+  .model-picker { font-size: 12px; flex-wrap: wrap; justify-content: center; }
+  .model-picker select { min-height: 44px; max-width: 100%; font-size: 16px; }
+  .viewer-placeholder { overflow-y: auto; justify-content: flex-start; padding: 20px; }
+  .viewer-placeholder p { font-size: 12px; }
+  .source-list { font-size: 11px; max-height: none; overflow: visible; }
+  #project-dialog.gallery-expanded[open], #project-dialog.model-view.gallery-expanded[open] { display: flex; flex-direction: column; }
+  .gallery-expanded .detail-media { flex: 1; min-height: 0; grid-template-rows: auto minmax(0, 1fr) auto auto; }
+  .gallery-expanded #detail-stage { height: 100%; min-height: 0; }
+  .gallery-expanded .detail-body { display: none; }
+
+  #journey-dialog {
+    width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border-radius: 0;
+    padding: calc(20px + var(--safe-top)) calc(18px + var(--safe-right)) calc(16px + var(--safe-bottom)) calc(18px + var(--safe-left));
+  }
+  #journey-dialog[open] { gap: 14px; }
+  .journey-header { padding-right: 46px; }
+  .journey-header h2 { font-size: 27px; }
+  .journey-header .close-modal { top: calc(12px + var(--safe-top)); right: calc(12px + var(--safe-right)); width: 44px; height: 44px; }
+  .journey-intro, .journey-header h2 > span { font-size: 12px; }
+  .journey-tabs { gap: 3px; }
+  .journey-tabs button { min-height: 44px; padding: 8px; font-size: 12px; }
+  .experience-copy > p, .experience-copy ul, .education-list p, .skill-list p { font-size: 13px; line-height: 1.7; }
+  .experience-meta > p, .journey-date, .journey-skills span { font-size: 11px; }
+  .education-list article { padding: 14px 0; grid-template-columns: 78px minmax(0, 1fr); }
+  .education-list h3, .skill-list h3 { font-size: 14px; }
+  .skill-list article { padding: 14px; }
+  .journey-footer { gap: 12px; padding-top: 10px; font-size: 11px; }
+  .journey-footer > span { max-width: 45%; }
+  .journey-pager { gap: 8px; flex: none; }
+  .journey-pager button { min-width: 44px; min-height: 44px; }
+}
+
+/* Separate the scene toolbar and navigation on touch screens. */
+@media (max-width: 760px) {
+  .identity { top: calc(12px + var(--safe-top)); left: calc(14px + var(--safe-left)); }
+  .identity-mark.identity-mark--motif { display: block; }
+  .top-controls {
+    top: calc(64px + var(--safe-top)); left: calc(12px + var(--safe-left)); right: calc(12px + var(--safe-right));
+    justify-content: flex-end; gap: 5px;
+  }
+  .top-controls button { width: 44px; height: 44px; flex: none; }
+  #scene-animation { position: static; width: 44px; height: 44px; }
+  .bottom-hud {
+    left: calc(10px + var(--safe-left)); right: calc(10px + var(--safe-right));
+    bottom: calc(12px + var(--safe-bottom)); display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .outside .bottom-hud { display: grid; }
+  .bottom-hud .view-controls { grid-column: 1 / -1; grid-row: 2; margin: 0; width: 100%; }
+  .outside .view-controls { display: flex; overflow-x: auto; justify-content: flex-start; }
+  .outside .view-controls button { flex: 1 0 auto; min-height: 44px; font-size: 11px; padding: 8px 10px; }
+  .inside .view-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .inside .view-controls button { min-height: 44px; font-size: 11px; white-space: normal; }
+  .enter-garage, .back-street, .project-shortcut { position: static; min-width: 0; min-height: 44px; padding: 10px 12px; font-size: 11px; }
+  .enter-garage, .project-shortcut { grid-column: 2; grid-row: 1; gap: 8px; }
+  .back-street { grid-column: 1; grid-row: 1; }
+  .project-shortcut span { font-size: 11px; }
+  .interaction-hint { display: none; }
+  .exterior-caption { left: calc(16px + var(--safe-left)); bottom: calc(132px + var(--safe-bottom)); }
+  .exterior-caption > span { display: none !important; }
+  .exterior-caption h1 { font-size: 24px; }
+  .help-panel {
+    top: calc(118px + var(--safe-top)); right: calc(12px + var(--safe-right));
+    width: calc(100% - 24px - var(--safe-left) - var(--safe-right));
+    max-height: calc(100dvh - 142px - var(--safe-top) - var(--safe-bottom));
+  }
+  #close-help { width: 44px; height: 44px; top: 4px; right: 4px; }
+  .help-panel h1 { padding-right: 20px; }
+}
+
+/* Landscape phones and short windows keep a usable reading area. */
+@media (max-height: 600px) {
+  .detail-note { display: block; }
+  .pc-desktop .catalog-header h2 { font-size: 21px; }
+  .pc-desktop .catalog-intro { display: none; }
+  .pc-desktop .filters { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .pc-desktop .filters button { font-size: 11px; }
+  .pc-address { display: none; }
+  .pc-shortcuts { top: 6px; bottom: 6px; gap: 3px; }
+  .pc-shortcut { min-height: 80px; gap: 3px; padding: 4px; }
+  .pc-icon, .pc-icon svg { height: 38px; width: 38px; }
+  .pc-wallpaper-caption { display: none; }
+  .pc-wordmark { bottom: 26px; right: 32px; font-size: 90px; }
+  #journey-dialog { height: 100dvh; max-height: 100dvh; padding-block: calc(10px + var(--safe-top)) calc(10px + var(--safe-bottom)); }
+  #journey-dialog[open] { gap: 8px; grid-template-rows: auto auto minmax(0, 1fr) auto; }
+  .journey-intro { display: none; }
+  .journey-header h2 { font-size: 22px; margin: 0; }
+  .journey-header h2 > span, .journey-header .eyebrow { display: none; }
+  .journey-tabs { padding-bottom: 6px; justify-content: flex-start; }
+  .journey-tabs button { min-height: 44px; }
+  .journey-footer { padding-top: 6px; }
+  .journey-header .close-modal { top: calc(8px + var(--safe-top)); right: calc(12px + var(--safe-right)); }
+  .exterior-caption { display: none; }
+  .identity { top: calc(8px + var(--safe-top)); left: calc(12px + var(--safe-left)); }
+  .top-controls { top: calc(8px + var(--safe-top)); left: auto; right: calc(12px + var(--safe-right)); }
+  .top-controls button { width: 44px; height: 44px; }
+  .view-controls button, .back-street, .project-shortcut { min-height: 44px; }
+  .bottom-hud { bottom: calc(8px + var(--safe-bottom)); }
+  .help-panel { top: calc(60px + var(--safe-top)); max-height: calc(100dvh - 76px - var(--safe-top) - var(--safe-bottom)); }
+}
+
+@media (max-height: 600px) and (max-width: 500px) {
+  .pc-desktop .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .top-controls { top: calc(60px + var(--safe-top)); }
+  .help-panel { top: calc(110px + var(--safe-top)); max-height: calc(100dvh - 126px - var(--safe-top) - var(--safe-bottom)); }
+}
+
+@media (pointer: coarse) {
+  .close-modal, .viewer-tabs button, .viewer-controls button, .journey-pager button,
+  .top-controls button, .detail-navigation button, .journey-tabs button { min-width: 44px; min-height: 44px; }
+}

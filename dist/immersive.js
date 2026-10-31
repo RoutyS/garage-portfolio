@@ -6,7 +6,7 @@ import {setupJourney} from './journey.js';
 import {startRace,startGolf,startHouse} from './demos.js';
 import {mountGraphicGallery} from './graphic-gallery.js';
 import {mountProjectVideo} from './project-video.js';
-import {setupComputer} from './pc-desktop.js?v=pc-desktop-2';
+import {setupComputer} from './pc-desktop.js?v=responsive-1';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const loader=new GLTFLoader();
@@ -35,7 +35,17 @@ function renderProjects(){
 }
 function openCatalog(){computer.open()}
 $('#open-projects').onclick=openCatalog;$('#laptop-hotspot').onclick=openCatalog;
-$('#search').oninput=()=>{catalogPage=0;renderProjects()};$('#prev-page').onclick=()=>{catalogPage--;renderProjects()};$('#next-page').onclick=()=>{catalogPage++;renderProjects()};
+function turnCatalogPage(step){
+ catalogPage+=step;renderProjects();
+ const grid=$('#project-grid'),content=$('.pc-explorer-content');
+ grid.scrollTop=0;
+ if(content&&content.scrollHeight>content.clientHeight){
+  const first=grid.querySelector('.project-card');
+  first?.focus({preventScroll:true});
+  first?.scrollIntoView({block:'start',behavior:'instant'});
+ }
+}
+$('#search').oninput=()=>{catalogPage=0;renderProjects()};$('#prev-page').onclick=()=>turnCatalogPage(-1);$('#next-page').onclick=()=>turnCatalogPage(1);
 document.addEventListener('click',e=>{const p=e.target.closest('[data-project]');if(p)openProject(p.dataset.project);const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;catalogPage=0;$$('.filters button').forEach(b=>b.classList.toggle('active',b===f));renderProjects()}});
 const toggleHelp=show=>{$('#help-panel').hidden=!show;$('#scene-help').setAttribute('aria-expanded',String(show))};$('#scene-help').onclick=()=>toggleHelp($('#help-panel').hidden);$('#close-help').onclick=()=>toggleHelp(false);
 $('#scene-fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{toast('Le plein écran n’est pas disponible dans ce navigateur.')}};

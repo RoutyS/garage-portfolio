@@ -40,7 +40,7 @@ export function setupComputer({openFolder, openJourney, projectCount}) {
         </nav>
         <div class="pc-welcome-note"><span class="pc-note-pin" aria-hidden="true"></span><span class="pc-note-label">À EXPLORER</span><p>Bienvenue<br>sur mon bureau.</p><span>${projectCount} projets, des idées<br>et un peu de moi.</span><small>Un clic sur un dossier suffit.</small></div>
         <section class="pc-explorer" aria-labelledby="catalog-title" hidden>
-          <div class="pc-titlebar"><span class="pc-window-name">${icon('folder')}<span id="pc-window-label">Mes projets</span></span><div class="pc-window-controls"><button id="pc-minimize" aria-label="Réduire la fenêtre des projets" title="Réduire">−</button><button id="pc-maximize" aria-label="Agrandir la fenêtre des projets" aria-pressed="false" title="Agrandir">□</button></div></div>
+          <div class="pc-titlebar"><span class="pc-window-name">${icon('folder')}<span id="pc-window-label" tabindex="-1">Mes projets</span></span><div class="pc-window-controls"><button id="pc-minimize" aria-label="Réduire la fenêtre des projets" title="Réduire">−</button><button id="pc-maximize" aria-label="Agrandir la fenêtre des projets" aria-pressed="false" title="Agrandir">□</button></div></div>
           <div class="pc-address"><button id="pc-home" aria-label="Revenir au bureau" title="Bureau">⌂</button><span>Bureau</span><span aria-hidden="true">›</span><strong id="pc-folder-label">Mes projets</strong></div>
           <div class="pc-explorer-content"></div>
         </section>
@@ -87,13 +87,18 @@ export function setupComputer({openFolder, openJourney, projectCount}) {
   function showFolder(key = lastFolder, reset = true) {
     setFolderLabel(key);
     explorer.hidden = false;
-    if (reset || !hasFolder) openFolder(key);
+    if (reset || !hasFolder) {
+      openFolder(key);
+      $('.pc-explorer-content').scrollTop = 0;
+    }
     hasFolder = true;
     task.classList.add('is-running');
     task.setAttribute('aria-pressed', 'true');
     task.setAttribute('aria-label', 'Réduire la fenêtre des projets');
     setMenu(false);
-    $('#search').focus({preventScroll:true});
+    // Keep the software keyboard closed until the visitor chooses to search.
+    if (matchMedia('(pointer: fine)').matches) $('#search').focus({preventScroll:true});
+    else $('#pc-window-label').focus({preventScroll:true});
   }
   function closeComputer() { dialog.close(); }
 

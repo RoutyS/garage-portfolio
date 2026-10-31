@@ -6,6 +6,12 @@ Après l’introduction, le site ouvre directement un écran d’ordinateur. Le 
 
 `dist/pc-desktop.js` gère le bureau, les fenêtres et l’entrée automatique après l’accueil ; `dist/pc-desktop.css` définit l’écran, les icônes et l’adaptation mobile. Les projets et leurs lecteurs existants restent dans `immersive.js`.
 
+## Adaptation mobile et tablette
+
+`dist/responsive.css`, chargé après les thèmes, adapte le bureau, les fiches, le parcours et les commandes du garage aux petits écrans et aux fenêtres courtes. Les catalogues passent à deux colonnes sur tablette, puis à une colonne jusqu’à 400 px. Les contenus longs se parcourent par défilement, les commandes tactiles mesurent au moins 44 px et les marges respectent les encoches du téléphone. Les fiches conservent leurs descriptions complètes et leur bouton de fermeture accessible pendant le défilement.
+
+Sur écran tactile, ouvrir un dossier ne déclenche pas le clavier de recherche. La pagination ramène au premier projet de la nouvelle page. L’affichage de bureau conserve sa présentation sur grand écran.
+
 ## Publication sur GitHub Pages
 
 Le dossier `dist/` contient le site statique prêt à publier, sans installation ni compilation. Le workflow `.github/workflows/pages.yml` publie uniquement ce dossier après chaque push sur `main`. Dans les paramètres GitHub du dépôt, la source de Pages doit être « GitHub Actions ».
