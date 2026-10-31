@@ -7,6 +7,7 @@ import {startRace,startGolf,startHouse} from './demos.js';
 import {mountGraphicGallery} from './graphic-gallery.js';
 import {mountProjectVideo} from './project-video.js';
 import {setupComputer} from './pc-desktop.js?v=responsive-1';
+import {filterProjects} from './project-filters.js?v=1';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const loader=new GLTFLoader();
@@ -15,13 +16,14 @@ const categoryNames={game:'Jeux & expériences','3d':'Création 3D',design:'2D &
 const modelNames={'gyrace-monowheel':'Monoroue','gyrace-circuit':'Circuit','minigolf-terrain':'Terrain','minigolf-putter':'Putter','mathbutter-suzanne':'Suzanne','mathbutter-donut':'Donut','bones-human':'Personnage','bones-dragonfly':'Libellule','bones-bunny':'Lapin','bones-teddy':'Teddy','procedural-prefab':'Élément de construction','genetic-human':'Individu'};
 Object.assign(modelNames,{'gyrace-spa':'Spa-Francorchamps','gyrace-le-mans':'Le Mans','gyrace-monaco':'Monaco','gyrace-ricardo-tormo':'Ricardo Tormo'});
 const modelLabel=(p,m)=>p.modelLabels?.[m]||modelNames[m]||m;
-const searchKey=text=>text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr').replace(/[^a-z0-9]/g,'');
-let activeProject=null,cleanMedia=()=>{},mediaGeneration=0,filter='playable',catalogPage=0;
+let activeProject=null,cleanMedia=()=>{},mediaGeneration=0,filter='playable',technology='all',catalogPage=0;
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e}
 function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('show'),3200)}
 function renderProjects(){
- const playable=p=>p.category==='game'&&(!!p.video||p.videoPending||p.externalVideo),q=searchKey($('#search').value);
- const all=projects.filter(p=>(filter==='all'||filter==='playable'&&playable(p)||p.category===filter||filter==='code'&&['ai','simulation'].includes(p.category))&&searchKey(p.name+' '+p.summary+' '+(p.context||'')+' '+p.tech.join(' ')).includes(q));
+ const playable=p=>p.category==='game'&&(!!p.video||p.videoPending||p.externalVideo);
+ const all=filterProjects(projects,{category:filter,technology,query:$('#search').value});
+ $$('[data-filter]').forEach(button=>{const active=button.dataset.filter===filter;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active))});
+ $$('[data-tech-filter]').forEach(button=>{const active=button.dataset.techFilter===technology;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active))});
  const perPage=3,pages=Math.max(1,Math.ceil(all.length/perPage));catalogPage=Math.min(catalogPage,pages-1);const grid=$('#project-grid');grid.replaceChildren();grid.classList.toggle('playable-grid',filter==='playable');grid.classList.toggle('design-grid',filter==='design');grid.classList.toggle('model-grid',filter==='3d');
  all.slice(catalogPage*perPage,catalogPage*perPage+perPage).forEach(p=>{
   const card=el('button','project-card');card.dataset.project=p.id;card.setAttribute('aria-label',(p.videoPending?'Découvrir ':playable(p)?'Voir la vidéo de ':p.demo?'Essayer ':'Découvrir ')+p.name);const art=el('div','card-art');
@@ -31,7 +33,7 @@ function renderProjects(){
  });
  $('.catalog-intro').textContent=filter==='playable'?'Les vidéos arrivent bientôt. Explorez les modèles et les visuels des jeux.':filter==='design'?'Identité visuelle, création personnelle et communication professionnelle.':`Jeux, 3D, graphisme et développement : explorez les ${projects.length} projets.`;
  $('#catalog-title span').textContent=' / '+projects.length;
- $('#empty').hidden=!!all.length;$('#result-count').textContent=all.length+' '+(filter==='playable'?'projets de jeux':'projets');$('#page-number').textContent=(catalogPage+1)+' / '+pages;$('#prev-page').disabled=catalogPage===0;$('#next-page').disabled=catalogPage===pages-1;
+ $('#empty').hidden=!!all.length;$('#result-count').textContent=all.length+' '+(all.length===1?'projet':'projets')+(filter==='playable'?' de jeux':'');$('#page-number').textContent=(catalogPage+1)+' / '+pages;$('#prev-page').disabled=catalogPage===0;$('#next-page').disabled=catalogPage===pages-1;
 }
 function openCatalog(){computer.open()}
 $('#open-projects').onclick=openCatalog;$('#laptop-hotspot').onclick=openCatalog;
@@ -46,7 +48,7 @@ function turnCatalogPage(step){
  }
 }
 $('#search').oninput=()=>{catalogPage=0;renderProjects()};$('#prev-page').onclick=()=>turnCatalogPage(-1);$('#next-page').onclick=()=>turnCatalogPage(1);
-document.addEventListener('click',e=>{const p=e.target.closest('[data-project]');if(p)openProject(p.dataset.project);const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;catalogPage=0;$$('.filters button').forEach(b=>b.classList.toggle('active',b===f));renderProjects()}});
+document.addEventListener('click',e=>{const p=e.target.closest('[data-project]');if(p)openProject(p.dataset.project);const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;catalogPage=0;renderProjects()}const t=e.target.closest('[data-tech-filter]');if(t){technology=t.dataset.techFilter;catalogPage=0;renderProjects()}});
 const toggleHelp=show=>{$('#help-panel').hidden=!show;$('#scene-help').setAttribute('aria-expanded',String(show))};$('#scene-help').onclick=()=>toggleHelp($('#help-panel').hidden);$('#close-help').onclick=()=>toggleHelp(false);
 $('#scene-fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{toast('Le plein écran n’est pas disponible dans ce navigateur.')}};
 function createRenderer(host,alpha=true){const r=new THREE.WebGLRenderer({antialias:true,alpha,powerPreference:'high-performance'});r.setPixelRatio(Math.min(devicePixelRatio,1.6));r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.03;r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;host.append(r.domElement);return r}
@@ -55,7 +57,7 @@ function shadows(root){root.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiv
 function disposeScene(scene){scene.traverse(o=>{o.geometry?.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>{if(!m)return;for(const v of Object.values(m))if(v?.isTexture)v.dispose();m.dispose()})})}
 
 const openJourney=setupJourney();
-const computer=setupComputer({projectCount:projects.length,openJourney,openFolder:category=>{filter=category;catalogPage=0;$('#search').value='';$$('.filters button').forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));renderProjects()}});
+const computer=setupComputer({projectCount:projects.length,openJourney,openFolder:category=>{filter=category;technology='all';catalogPage=0;$('#search').value='';renderProjects()}});
 startNeighborhood({loader,openCatalog,openJourney,toast,toggleHelp,reduced});
 
 // Project media controllers retained from the first version; the garage is the sole page.

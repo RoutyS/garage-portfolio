@@ -6,6 +6,10 @@ Après l’introduction, le site ouvre directement un écran d’ordinateur. Le 
 
 `dist/pc-desktop.js` gère le bureau, les fenêtres et l’entrée automatique après l’accueil ; `dist/pc-desktop.css` définit l’écran, les icônes et l’adaptation mobile. Les projets et leurs lecteurs existants restent dans `immersive.js`.
 
+## Filtres par technologie
+
+Le catalogue combine les catégories existantes avec les filtres Unity, Unreal et AR. Les technologies sont reconnues à partir des compétences déclarées dans chaque fiche : AR désigne la réalité augmentée, sans inclure le nom de l’entreprise AR Compétences. La recherche et la pagination respectent les deux groupes de filtres. Ouvrir un dossier du bureau réinitialise le filtre technologique. `dist/project-filters.js` contient les règles de classement.
+
 ## Adaptation mobile et tablette
 
 `dist/responsive.css`, chargé après les thèmes, adapte le bureau, les fiches, le parcours et les commandes du garage aux petits écrans et aux fenêtres courtes. Les catalogues passent à deux colonnes sur tablette, puis à une colonne jusqu’à 400 px. Les contenus longs se parcourent par défilement, les commandes tactiles mesurent au moins 44 px et les marges respectent les encoches du téléphone. Les fiches conservent leurs descriptions complètes et leur bouton de fermeture accessible pendant le défilement.
